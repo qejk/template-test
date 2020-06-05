@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/qejk/template-test/compare/v1.0.0...v1.0.1) (2020-06-05)
+
+
+### Bug Fixes
+
+* path to cross-env ([a1c07df](https://github.com/qejk/template-test/commit/a1c07dfedc7d3d455afe0fb7a6a63e1729bcd4de))
+* reference to wrong script ([0c8d074](https://github.com/qejk/template-test/commit/0c8d07456a54f210d3155c0ccb05b79aa05cc030))
+
 # 1.0.0 (2020-06-05)
 
 
