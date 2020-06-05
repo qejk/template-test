@@ -120,3 +120,8 @@ Branch naming convention MUST be fallowed and its based on top of [Conventional 
 
 1. Ensure that repository is properly configured to work with the automated workflow(look at [Setup](#setup) to for more information).
    Only allow squash merging of pull requests
+
+##### Required KEYS
+PROJECT*KEY_PATTERN > [a-zA-Z0-9*]{3}-[\d]+
+NPM_TOKEN >
+TICKET_URL >
