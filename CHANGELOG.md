@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/qejk/template-test/compare/v1.0.3...v1.0.4) (2020-06-05)
+
+
+### Bug Fixes
+
+* pin node version for release ([7d27bd8](https://github.com/qejk/template-test/commit/7d27bd82a6980b582415ca9d3dd0058d66e50fb5))
+
 ## [1.0.3](https://github.com/qejk/template-test/compare/v1.0.2...v1.0.3) (2020-06-05)
 
 
