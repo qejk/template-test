@@ -59,7 +59,7 @@
   description: Documentation only changes
   color: FFFFFF
 - name: style
-  description: Changes that do not affect the meaning of the code(white-space, formatting, missing semi-colons, etc)
+  description: Changes that do not affect the meaning of the code
   color: 351E5C
 - name: refactor
   description: A code change that neither fixes a bug or adds a feature
@@ -71,5 +71,5 @@
   description: Adding missing tests
   color: 84FF2E
 - name: chore
-  description: Changes to the build process or auxiliary tools and libraries such as documentation generation
+  description: Changes to the build process, libraries, generation
   color: 000000
