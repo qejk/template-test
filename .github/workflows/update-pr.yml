@@ -1,0 +1,75 @@
+name: "Update Pull Request"
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  assign_labels:
+    runs-on: ubuntu-latest
+    name: Assign labels
+    steps:
+      - uses: technote-space/pr-labeler-action@v4
+        with:
+          CONFIGURATION_PATH: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
+  format_fix_pr_information:
+    runs-on: ubuntu-latest
+    name: Format fix pull request
+    if: ${{ contains(github.event.pull_request.title, 'fix') }}
+    needs: [assign_labels]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Read 'fix' body template
+      id: pull_request_body
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./.github/ISSUE_TEMPLATE/fix_template.md
+    - name: Update Pull Request
+      uses: tzkhan/pr-update-action@v1.1.1
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        branch-regex: ${{ secrets.PROJECT_KEY_PATTERN }}
+        lowercase-branch: true
+        title-template: '[%branch%]'
+        replace-title: false
+        title-prefix-space: true
+        uppercase-title: false
+        body-template: |
+          [Link to %branch%](${{ secrets.TICKET_URL }}%branch%)
+          ---
+          ${{ steps.pull_request_body.outputs.content }}
+        replace-body: false
+        body-prefix-newline-count: 2
+        uppercase-body: true
+  format_default_pr_information:
+    runs-on: ubuntu-latest
+    name: Format default pull request
+    if: >
+      github.actor != 'github-actions[bot]' && (! contains(github.event.pull_request.labels.*.name, 'bug') && ! contains(github.event.pull_request.labels.*.name, 'fix'))
+    needs: [assign_labels]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Read 'default' body template
+      id: pull_request_body
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./.github/ISSUE_TEMPLATE/pull_request_template.md
+    - name: Update Pull Request
+      uses: tzkhan/pr-update-action@v1.1.1
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        branch-regex: '[a-z\d-_.\/]+'
+        lowercase-branch: true
+        title-template: '[%branch%]'
+        replace-title: false
+        title-prefix-space: true
+        uppercase-title: false
+        body-template: |
+          [Link to %branch%](${{ secrets.TICKET_URL }}%branch%)
+          ---
+          ${{ steps.pull_request_body.outputs.content }}
+        replace-body: false
+        body-prefix-newline-count: 2
+        uppercase-body: true
