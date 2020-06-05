@@ -80,12 +80,12 @@
     "typescript": "^3.9.3"
   },
   "scripts": {
-    "build:cjs": "cross-env NODE_ENV=cjs rollup -c",
-    "build:es": "cross-env NODE_ENV=es rollup -c",
+    "build:cjs": "./node_modules/.bin/cross-env NODE_ENV=cjs rollup -c",
+    "build:es": "./node_modules/.bin/cross-env NODE_ENV=es rollup -c",
     "build": "npm run clean && npm run build:es && npm run build:cjs",
     "clean": "rimraf dist",
     "commit": "yarn cz",
-    "coverage:ci": "cross-env CI=true nyc report --reporter=text-lcov > coverage.lcov",
+    "coverage:ci": "./node_modules/.bin/cross-env CI=true nyc report --reporter=text-lcov > coverage.lcov",
     "coverage:report": "nyc report --reporter=html --reporter=lcov",
     "coverage": "nyc npm run test",
     "cz": "node_modules/.bin/git-cz",
@@ -99,13 +99,13 @@
     "semantic-release": "semantic-release",
     "test:coverage": "nyc --check-coverage=true yarn run test:all",
     "test:format": "./node_modules/.bin/prettier --check '*/**/*.{js,ts}'",
-    "test:integration:watch": "cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --watch --config ./.mocharc.json ./test/integration",
-    "test:integration": "cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --config ./.mocharc.json ./test/integration",
+    "test:integration:watch": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --watch --config ./.mocharc.json ./test/integration",
+    "test:integration": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --config ./.mocharc.json ./test/integration",
     "test:lint": "./node_modules/.bin/eslint 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
-    "test:unit:watch": "cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --watch --config ./.mocharc.json ./test/unit",
-    "test:unit": "cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --config ./.mocharc.json ./test/unit",
+    "test:unit:watch": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --watch --config ./.mocharc.json ./test/unit",
+    "test:unit": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --config ./.mocharc.json ./test/unit",
     "test:watch": "npm test -- --watch",
-    "test": "cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --config ./.mocharc.json"
+    "test": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --config ./.mocharc.json"
   },
   "scripts-info": {
     "build": "Clean and rebuild the project",
