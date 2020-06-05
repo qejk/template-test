@@ -109,15 +109,18 @@ jobs:
           allow_failure: false
           files: './test/integration'
       - name: Setup Node
+        if: steps.has_integration_tests.outputs.files_exists == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
+        if: steps.has_integration_tests.outputs.files_exists == 'true'
         uses: jaid/action-npm-install@v1.2.1
       - name: Run integration tests
+        if: steps.has_integration_tests.outputs.files_exists == 'true'
         run: yarn test:integration
       - uses: actions/github-script@0.6.0
-        if: failure() && contains(env.isFork, 'false')
+        if: steps.has_integration_tests.outputs.files_exists == 'true' && failure() && contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -127,7 +130,7 @@ jobs:
               })
             }
       - uses: actions/github-script@0.6.0
-        if: contains(env.isFork, 'false')
+        if: steps.has_integration_tests.outputs.files_exists == 'true' && contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
