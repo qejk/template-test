@@ -1,6 +1,6 @@
 {
   "name": "template-test",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Template project for creating libraries",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
