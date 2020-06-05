@@ -97,7 +97,7 @@
     "prepare": "yarn test:coverage && yarn lint && yarn docs && yarn build",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "semantic-release": "semantic-release",
-    "test:coverage": "nyc --check-coverage=true yarn run test:all",
+    "test:coverage": "nyc --check-coverage=true yarn run test",
     "test:format": "./node_modules/.bin/prettier --check '*/**/*.{js,ts}'",
     "test:integration:watch": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --watch --config ./.mocharc.json ./test/integration",
     "test:integration": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --config ./.mocharc.json ./test/integration",
