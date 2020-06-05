@@ -29,7 +29,7 @@ jobs:
         github.event_name == 'issue_comment'
         && github.event.issue.pull_request != ''
         && contains(github.event.comment.body, '/release')
-        && github.actor == ${{ secrets.AUTHOR }}
+        && github.actor == ${{ env.AUTHOR }}
         && contains(github.event.pull_request.labels.*.name, 'formatted')
         && contains(github.event.pull_request.labels.*.name, 'linted')
         && contains(github.event.pull_request.labels.*.name, 'conventional')
@@ -40,7 +40,7 @@ jobs:
         && ! contains(github.event.issue.labels.*.name, 'automated merge')
         && ! contains(github.event.issue.labels.*.name, 'hold merge'))
     steps:
-        # IF formatted, builds, and tested labels then merge
+      # IF formatted, builds, and tested labels then merge
       - name: if formatted, builds, tested merge automerge pr
         uses: pascalgn/automerge-action@v0.7.5
         env:

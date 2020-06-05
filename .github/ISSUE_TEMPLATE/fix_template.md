@@ -43,3 +43,36 @@ Line 2 of log file xy`
 ### Starting point
 
 [If you know it] Starting point in the code for handling the issue (e.g. class name) --> URL to code line in Github is also useful.
+
+
+---
+
+## Review Checklist
+
+### Basics
+
+- [ ] PR has been assigned
+- [ ] PR uses appropriate labels (`fix`)
+- [ ] PR has a all necessary bug-description fields filled
+- [ ] PR is peer reviewed <sup>**optional**</sup>
+- [ ] Commits contain a meaningful commit messages and fallow syntax of [Conventional Commits](http://www.conventionalcommits.org/)
+- [ ] On dependency change: `yarn.lock` file is updated and committed
+- [ ] `CHANGELOG.md` and references to project's version are unchanged(let [semantic-release](https://github.com/semantic-release/semantic-release) do the magic)
+
+### Code Quality
+- [ ] Code is properly typed with TypeScript
+- [ ] Code `builds`(`yarn run build`)
+- [ ] Code is `formatted`(`yarn run test:format`)
+- [ ] Code is `linted`(`yarn run test:lint`)
+- [ ] Code is `tested:unit`(`yarn run test:unit`)
+- [ ] Code is `tested:integration`(`yarn run test:integration`)
+
+### Testing
+- [ ] New fix is covered by unit tests
+- [ ] New fix is covered by integration tests
+- [ ] All existing tests are still up-to-date
+
+### After Review
+- [ ] Merge the PR
+- [ ] Delete the source branch
+- [ ] Move the ticket to `done` <sup>**optional**</sup>

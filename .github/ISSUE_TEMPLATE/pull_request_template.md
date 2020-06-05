@@ -15,7 +15,7 @@ This PR CHANGES.
 - [ ] PR has a good description that summarizes all changes
 - [ ] PR is updated to the most recent version of the target branch(and there are no conflicts)
 - [ ] PR scope(size) is manageable(#1 way to speed up review time)
-- [ ] PR is peer reviewed
+- [ ] PR is peer reviewed <sup>**optional**</sup>
 - [ ] Commits contain a meaningful commit messages and fallow syntax of [Conventional Commits](http://www.conventionalcommits.org/)
 - [ ] On dependency change: `yarn.lock` file is updated and committed
 - [ ] `CHANGELOG.md` and references to project's version are unchanged(let [semantic-release](https://github.com/semantic-release/semantic-release) do the magic)
@@ -38,4 +38,4 @@ This PR CHANGES.
 ### After Review
 - [ ] Merge the PR
 - [ ] Delete the source branch
-- [ ] Move the ticket to `done`
+- [ ] Move the ticket to `done` <sup>**optional**</sup>
