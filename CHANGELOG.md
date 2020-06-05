@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/qejk/template-test/compare/v1.0.4...v1.0.5) (2020-06-05)
+
+
+### Bug Fixes
+
+* nyc reference ([d81ae95](https://github.com/qejk/template-test/commit/d81ae95bdf2c26d81f6e2476053f56865b9c0d36))
+
 ## [1.0.4](https://github.com/qejk/template-test/compare/v1.0.3...v1.0.4) (2020-06-05)
 
 
