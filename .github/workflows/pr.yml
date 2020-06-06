@@ -218,6 +218,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
+      - name: Setup Node@13.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
       - run: yarn test:format
