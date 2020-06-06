@@ -19,7 +19,7 @@ Please fallow conventions above, otherwise - it makes your contribution **un-mer
 ##### Creation
 
 1. Pull Request SHALL target _develop_ or _master_ branch(for large scale projects use _develop_ as the go-to branch for new features or other, non-_hotfixable_ changes that should be scheduled for upcoming releases and _master_ for medium sized libraries). You MAY also use other branches if you are fallowing specific release workflow.
-2. Added title MUST describe the change that you want to implement and MUST exclude _project key_(i.e. `foo-123`).
+2. Added title MUST describe the change that you want to implement and MUST exclude _project key_(i.e. `foo-123`), for example: `Add subtract`, `Document multiply`, `Bump lodash to 4.17.15`.
 3. Adding Pull Request body MUST be initially omitted(its auto generated).
 4. All [Github Actions](https://github.com/features/actions) MUST be successfully finished before any change is done to Pull Request. Sometimes it takes couple of seconds to start - don't be misled if this process is done immediately and successful.
 5. New Pull Request's title MUST be auto-generated - it prefixes user's tile with _project key_(i.e. `[FOO-123] User's title set during creation`).
