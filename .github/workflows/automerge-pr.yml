@@ -20,8 +20,7 @@ jobs:
         && contains(github.event.pull_request.labels.*.name, 'linted')
         && contains(github.event.pull_request.labels.*.name, 'conventional')
         && contains(github.event.pull_request.labels.*.name, 'builds')
-        && contains(github.event.pull_request.labels.*.name, 'tested:unit')
-        && contains(github.event.pull_request.labels.*.name, 'tested:integration')
+        && contains(github.event.pull_request.labels.*.name, 'tested')
         && contains(github.event.pull_request.labels.*.name, 'covered')
         && ! contains(github.event.pull_request.labels.*.name, 'automated merge')
         && ! contains(github.event.pull_request.labels.*.name, 'hold merge')
@@ -34,8 +33,7 @@ jobs:
         && contains(github.event.pull_request.labels.*.name, 'linted')
         && contains(github.event.pull_request.labels.*.name, 'conventional')
         && contains(github.event.pull_request.labels.*.name, 'builds')
-        && contains(github.event.pull_request.labels.*.name, 'tested:unit')
-        && contains(github.event.pull_request.labels.*.name, 'tested:integration')
+        && contains(github.event.pull_request.labels.*.name, 'tested')
         && contains(github.event.pull_request.labels.*.name, 'covered')
         && ! contains(github.event.issue.labels.*.name, 'automated merge')
         && ! contains(github.event.issue.labels.*.name, 'hold merge'))
@@ -49,7 +47,7 @@ jobs:
           # This breaks the /release on issue_comment portion unless I get the head.ref from github-script
           MERGE_COMMIT_MESSAGE: 'Auto merge from ${{ github.event.pull_request.head.ref }} PR#{pullRequest.number}: {pullRequest.title}'
           UPDATE_METHOD: merge
-          MERGE_LABELS: 'formatted,builds,tested:unit,tested:integration,linted,covered,conventional'
+          MERGE_LABELS: 'formatted,builds,tested,linted,covered,conventional'
           UPDATE_LABELS: ''
         # IF failure, get payload of PR and notify
       - name: if failure, get pr payload
@@ -96,9 +94,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            if ('${{ contains(github.event.pull_request.labels.*.name, 'failure') }}' == 'true') {
+            if ('${{ contains(github.event.pull_request.labels.*.name, 'failed') }}' == 'true') {
               github.issues.removeLabel({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
-                name: 'failure'
+                name: 'failed'
               })
             }
       - uses: actions/github-script@0.6.0

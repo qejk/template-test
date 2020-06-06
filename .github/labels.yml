@@ -30,11 +30,8 @@
   description: This will not be worked on
   color: ffffff
 # Workflow
-- name: tested:unit
+- name: tested
   description: Code that has passed unit tests
-  color: eeeeee
-- name: tested:integration
-  description: Code that has passed integration tests
   color: eeeeee
 - name: linted
   description: Code that has been linted
@@ -48,6 +45,9 @@
 - name: builds
   description: Code that builds
   color: A1E202
+- name: failed
+  description: Automated workflow failed
+  color: F50C5A
 # Conventional
 - name: feature
   description: A new feature

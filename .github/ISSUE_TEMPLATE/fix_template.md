@@ -4,11 +4,11 @@ First, choose a meaningful and short title and mention context for example: `[FO
 
 What is the problem you fixed?
 
-### What is the current *bug* behavior?
+### What is the current _bug_ behavior?
 
 What actually happens?
 
-### What is the expected *correct* behavior?
+### What is the expected _correct_ behavior?
 
 What you should see instead?
 
@@ -44,7 +44,6 @@ Line 2 of log file xy`
 
 [If you know it] Starting point in the code for handling the issue (e.g. class name) --> URL to code line in Github is also useful.
 
-
 ---
 
 ## Review Checklist
@@ -60,19 +59,22 @@ Line 2 of log file xy`
 - [ ] `CHANGELOG.md` and references to project's version are unchanged(let [semantic-release](https://github.com/semantic-release/semantic-release) do the magic)
 
 ### Code Quality
+
 - [ ] Code is properly typed with TypeScript
-- [ ] Code `builds`(`yarn run build`)
-- [ ] Code is `formatted`(`yarn run test:format`)
-- [ ] Code is `linted`(`yarn run test:lint`)
-- [ ] Code is `tested:unit`(`yarn run test:unit`)
-- [ ] Code is `tested:integration`(`yarn run test:integration`)
+- [ ] Code `builds`(`yarn build`)
+- [ ] Code is `formatted`(`yarn test:format`)
+- [ ] Code is `linted`(`yarn test:lint`)
+- [ ] Code is unit `tested`(`yarn test:unit`)
+- [ ] Code is integration `tested`(`yarn test:integration`)
 
 ### Testing
+
 - [ ] New fix is covered by unit tests
 - [ ] New fix is covered by integration tests
 - [ ] All existing tests are still up-to-date
 
 ### After Review
+
 - [ ] Merge the PR
 - [ ] Delete the source branch
 - [ ] Move the ticket to `done` <sup>**optional**</sup>
