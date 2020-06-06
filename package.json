@@ -99,7 +99,7 @@
     "reset": "git clean -dfx && git reset --hard && npm i",
     "semantic-release": "semantic-release",
     "test:coverage": "./node_modules/.bin/nyc --check-coverage=true yarn run test",
-    "test:format": "./node_modules/.bin/prettier --check '*/**/*.{js,ts}'",
+    "test:format": "./node_modules/.bin/prettier --check 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "test:integration:watch": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --watch --config ./.mocharc.json ./test/integration",
     "test:integration": "./node_modules/.bin/cross-env NODE_ENV=test TS_NODE_PROJECT=./test/tsconfig.json TS_NODE_COMPILER=\"ttypescript\" ./node_modules/.bin/mocha --config ./.mocharc.json ./test/integration",
     "test:lint": "./node_modules/.bin/eslint 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
