@@ -31,27 +31,6 @@ jobs:
           node-version: 13.x
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
-      - name: Format, create authors file and commit changes
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "GitHub Action"
-          yarn format
-          git add -A
-          git diff-index --quiet HEAD || git commit --allow-empty -m "style: add format changes 🤖" -a
-          git add -A
-          git diff-index --quiet HEAD || git commit --allow-empty -m "chore: add release changes ⚙️" -a
-          git log --format='%aN <%aE>%n%cN <%cE>' | sort -u > AUTHORS
-          sed -i '/${{ env.USERNAME }}/d' AUTHORS
-          sed -i '/semantic-release-bot/d' AUTHORS
-          sed -i '/GitHub <noreply@github.com>/d' AUTHORS
-          sed -i '/GitHub Action <github-actions[bot]@users.noreply.github.com>/d' AUTHORS
-          sed -i '/zeke@github.com/d' AUTHORS
-          sed -i '/zeke@sikelianos.com/d' AUTHORS
-          sed -i '/github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>/d' AUTHORS
-          sed -i '/dependabot/d' AUTHORS
-          echo -e "\r\n$(date)" >> AUTHORS
-          git add -A
-          git diff-index --quiet HEAD || git commit --allow-empty -m "chore: update AUTHORS 📓" -a
       - name: Release with Semantic-Release
         uses: cycjimmy/semantic-release-action@v2
         id: semantic
