@@ -1,3 +1,12 @@
+## [1.0.6](https://github.com/qejk/template-test/compare/v1.0.5...v1.0.6) (2020-06-06)
+
+
+### Bug Fixes
+
+* github package publication ([1d1a70a](https://github.com/qejk/template-test/commit/1d1a70acbd724fdd6c9925dae5568cf56fe8b92c))
+* install dependencies for release and check_release ([3b676c3](https://github.com/qejk/template-test/commit/3b676c3324e12b198d9821665baded33357381df))
+* install missing dependencies before formatting ([c75f127](https://github.com/qejk/template-test/commit/c75f127ec25fe1fb56ada9e929a00f112ed8e0c9))
+
 ## [1.0.5](https://github.com/qejk/template-test/compare/v1.0.4...v1.0.5) (2020-06-05)
 
 
