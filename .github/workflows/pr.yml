@@ -218,6 +218,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
+      - name: Install dependencies
+        uses: jaid/action-npm-install@v1.2.1
       - run: yarn test:format
       - name: Format and commit changes if check failed
         if: failure() && github.actor != 'github-actions' && contains(env.isFork, 'false')
