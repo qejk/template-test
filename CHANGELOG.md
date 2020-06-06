@@ -1,3 +1,24 @@
+# [1.1.0](https://github.com/qejk/template-test/compare/v1.0.5...v1.1.0) (2020-06-06)
+
+
+### Bug Fixes
+
+* github package publication ([1d1a70a](https://github.com/qejk/template-test/commit/1d1a70acbd724fdd6c9925dae5568cf56fe8b92c))
+* install dependencies for release and check_release ([3b676c3](https://github.com/qejk/template-test/commit/3b676c3324e12b198d9821665baded33357381df))
+* install missing dependencies before formatting ([c75f127](https://github.com/qejk/template-test/commit/c75f127ec25fe1fb56ada9e929a00f112ed8e0c9))
+* invalid syntax ([2274ace](https://github.com/qejk/template-test/commit/2274ace6d1d296fe91a00c455742efdad379c678))
+* pin node version ([361eecb](https://github.com/qejk/template-test/commit/361eecb5ab234170c9c6c901a41caca73dd17a46))
+* remove build process from formatting ([719ba85](https://github.com/qejk/template-test/commit/719ba856d6f73a3a33c0d79cb1b09f2c844de1a2))
+* remove formatting job ([798b866](https://github.com/qejk/template-test/commit/798b866feb221f3fd0065333997c8d7b61eba0df))
+* simplify workflow ([e5e5dab](https://github.com/qejk/template-test/commit/e5e5dabfb3a2bffbf024c3f4bc00e6001f31c94e))
+* simplify workflow to trigger automerge without integration tests ([3dcab99](https://github.com/qejk/template-test/commit/3dcab99047da76793e6f635d4ce604ff83b87c72))
+* test:format file paths ([cec48b4](https://github.com/qejk/template-test/commit/cec48b4a4267f1f80f1a34fcb5668caa634786f8))
+
+
+### Features
+
+* [foo-002] add subtract ([89015c0](https://github.com/qejk/template-test/commit/89015c0a643f04d59d883603912802dc700b35e9))
+
 ## [1.0.5](https://github.com/qejk/template-test/compare/v1.0.4...v1.0.5) (2020-06-05)
 
 
