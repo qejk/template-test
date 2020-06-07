@@ -14,5 +14,6 @@ function increment(a) {
     return a + 1;
 }
 const foo = 'foo';
+const baz = 'baz';
 
-export { add, divide, foo, increment, multiply, subtract };
+export { add, baz, divide, foo, increment, multiply, subtract };

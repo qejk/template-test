@@ -18,8 +18,10 @@ function increment(a) {
     return a + 1;
 }
 const foo = 'foo';
+const baz = 'baz';
 
 exports.add = add;
+exports.baz = baz;
 exports.divide = divide;
 exports.foo = foo;
 exports.increment = increment;
