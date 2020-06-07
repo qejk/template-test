@@ -6,4 +6,5 @@ declare function increment(a: number): number;
 declare const foo = "foo";
 declare const baz = "baz";
 declare const bar = "bar";
-export { add, subtract, multiply, divide, increment, foo, baz, bar };
+declare const abc = "abc";
+export { add, subtract, multiply, divide, increment, foo, baz, bar, abc };
