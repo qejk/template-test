@@ -13,9 +13,11 @@ describe('tests', () => {
   it('multiply', () => {
     expect(multiply(2, 2)).to.be.equal(4);
   });
+
   it('divide', () => {
     expect(divide(4, 2)).to.be.equal(2);
   });
+
   it('increment', () => {
     expect(increment(4)).to.be.equal(5);
   });
