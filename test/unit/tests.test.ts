@@ -8,6 +8,7 @@ import {
   foo,
   baz,
   bar,
+  abc,
 } from '../../src/index';
 
 describe('tests', () => {
@@ -38,5 +39,8 @@ describe('tests', () => {
   });
   it('bar', () => {
     expect(bar).to.be.equal('bar');
+  });
+  it('abc', () => {
+    expect(abc).to.be.equal('abc');
   });
 });
