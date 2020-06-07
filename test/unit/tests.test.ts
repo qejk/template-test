@@ -7,6 +7,7 @@ import {
   increment,
   foo,
   baz,
+  bar,
 } from '../../src/index';
 
 describe('tests', () => {
@@ -34,5 +35,8 @@ describe('tests', () => {
   });
   it('baz', () => {
     expect(baz).to.be.equal('baz');
+  });
+  it('bar', () => {
+    expect(bar).to.be.equal('bar');
   });
 });
