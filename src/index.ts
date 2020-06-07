@@ -43,4 +43,6 @@ function increment(a: number): number {
   return a + 1;
 }
 
-export { add, subtract, multiply, divide, increment };
+const foo = 'foo';
+
+export { add, subtract, multiply, divide, increment, foo };
