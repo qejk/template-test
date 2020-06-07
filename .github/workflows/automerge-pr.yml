@@ -1,8 +1,7 @@
 name: Automerge Pull Requests
 on:
   pull_request:
-    branches: [master, next, develop, alpha, beta]
-    types: [labeled, closed]
+    types: [labeled]
 jobs:
   automerge:
     name: Automerge Pull Request
