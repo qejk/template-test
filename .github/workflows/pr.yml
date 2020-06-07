@@ -209,6 +209,40 @@ jobs:
             github.issues.addLabels({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
               labels: ['formatted']
             })
+  assign_authors:
+    name: Assign authors
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2 # checkout for forks
+        if: contains(env.isFork, 'true')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2 # checkout for PR
+        if: contains(env.isFork, 'false')
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Update AUTHORS file
+        if: github.actor != 'github-actions' && contains(env.isFork, 'false')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git log --format='%aN <%aE>%n%cN <%cE>' | sort -u > AUTHORS
+          sed -i '/${{ env.USERNAME }}/d' AUTHORS
+          sed -i '/semantic-release-bot/d' AUTHORS
+          sed -i '/GitHub <noreply@github.com>/d' AUTHORS
+          sed -i '/GitHub Action <github-actions[bot]@users.noreply.github.com>/d' AUTHORS
+          sed -i '/zeke@github.com/d' AUTHORS
+          sed -i '/zeke@sikelianos.com/d' AUTHORS
+          sed -i '/github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>/d' AUTHORS
+          sed -i '/dependabot/d' AUTHORS
+          echo -e "\r\n$(date)" >> AUTHORS
+          git add -A
+          git diff-index --quiet HEAD || git commit --allow-empty -m "chore: update AUTHORS 📓" -a
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/${{ github.head_ref }} && exit 0
   build:
     runs-on: ubuntu-latest
     name: Build
