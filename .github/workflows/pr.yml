@@ -147,7 +147,7 @@ jobs:
               })
             }
       - name: Success - add linted label
-      - uses: actions/github-script@0.6.0
+        uses: actions/github-script@0.6.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
