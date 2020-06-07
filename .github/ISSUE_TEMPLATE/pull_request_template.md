@@ -10,8 +10,9 @@ This PR CHANGES.
 
 ### Basics
 
+- [ ] PR information has been filled
 - [ ] PR has been assigned
-- [ ] PR uses appropriate labels (`feature`/`bug`/`chore`)
+- [ ] PR uses appropriate labels (`feature`/`chore`/`style`/`docs`/`refactor`/`perf`/`test`)
 - [ ] PR has a good description that summarizes all changes
 - [ ] PR is updated to the most recent version of the target branch(and there are no conflicts)
 - [ ] PR scope(size) is manageable(#1 way to speed up review time)

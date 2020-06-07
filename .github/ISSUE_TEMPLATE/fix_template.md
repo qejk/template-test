@@ -50,8 +50,9 @@ Line 2 of log file xy`
 
 ### Basics
 
+- [ ] PR information has been filled
 - [ ] PR has been assigned
-- [ ] PR uses appropriate labels (`fix`)
+- [ ] PR uses appropriate labels (`fix`/`hotfix`)
 - [ ] PR has a all necessary bug-description fields filled
 - [ ] PR is peer reviewed <sup>**optional**</sup>
 - [ ] Commits contain a meaningful commit messages and fallow syntax of [Conventional Commits](http://www.conventionalcommits.org/)
