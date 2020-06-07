@@ -9,6 +9,7 @@ import {
   baz,
   bar,
   abc,
+  def,
 } from '../../src/index';
 
 describe('tests', () => {
@@ -42,5 +43,8 @@ describe('tests', () => {
   });
   it('abc', () => {
     expect(abc).to.be.equal('abc');
+  });
+  it('def', () => {
+    expect(def).to.be.equal('def');
   });
 });
