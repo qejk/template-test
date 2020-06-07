@@ -19,8 +19,10 @@ function increment(a) {
 }
 const foo = 'foo';
 const baz = 'baz';
+const bar = 'bar';
 
 exports.add = add;
+exports.bar = bar;
 exports.baz = baz;
 exports.divide = divide;
 exports.foo = foo;
