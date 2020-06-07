@@ -34,4 +34,13 @@ function multiply(a: number, b: number): number {
 function divide(a: number, b: number): number {
   return a / b;
 }
-export { add, subtract, multiply, divide };
+/**
+ * Increment number by +1.
+ * @param a - Number.
+ * @returns Number.
+ */
+function increment(a: number): number {
+  return a + 1;
+}
+
+export { add, subtract, multiply, divide, increment };
