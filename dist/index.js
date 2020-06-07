@@ -17,9 +17,11 @@ function divide(a, b) {
 function increment(a) {
     return a + 1;
 }
+const foo = 'foo';
 
 exports.add = add;
 exports.divide = divide;
+exports.foo = foo;
 exports.increment = increment;
 exports.multiply = multiply;
 exports.subtract = subtract;

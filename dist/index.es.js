@@ -13,5 +13,6 @@ function divide(a, b) {
 function increment(a) {
     return a + 1;
 }
+const foo = 'foo';
 
-export { add, divide, increment, multiply, subtract };
+export { add, divide, foo, increment, multiply, subtract };
