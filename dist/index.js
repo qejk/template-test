@@ -11,7 +11,11 @@ function subtract(a, b) {
 function multiply(a, b) {
     return a * b;
 }
+function divide(a, b) {
+    return a / b;
+}
 
 exports.add = add;
+exports.divide = divide;
 exports.multiply = multiply;
 exports.subtract = subtract;
