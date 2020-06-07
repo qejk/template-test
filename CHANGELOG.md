@@ -27,6 +27,42 @@
 * [foo-002] add subtract ([89015c0](https://github.com/qejk/template-test/commit/89015c0a643f04d59d883603912802dc700b35e9))
 * [foo-009] add increment ([5078236](https://github.com/qejk/template-test/commit/50782363443e4454624344ac7045c26d60c2556b))
 * [foo-105] add divide ([09f842e](https://github.com/qejk/template-test/commit/09f842eb747b16d498eec5a7c7862104daa018a1))
+* add foo ([fda99ab](https://github.com/qejk/template-test/commit/fda99ab4b95a17214d771f7b61a226b27768ec66))
+
+
+### Reverts
+
+* check_release job ([71f3a89](https://github.com/qejk/template-test/commit/71f3a89616c373960669c8f0d51742dbe9b9c623))
+
+# [1.1.0](https://github.com/qejk/template-test/compare/v1.0.5...v1.1.0) (2020-06-07)
+
+
+### Bug Fixes
+
+* automerge ([c8ba8f4](https://github.com/qejk/template-test/commit/c8ba8f41291df259904055367d8a8211febea450))
+* automerge author ([295f1e5](https://github.com/qejk/template-test/commit/295f1e578e19ad41dad3f3c6527095b6a475d540))
+* github package publication ([1d1a70a](https://github.com/qejk/template-test/commit/1d1a70acbd724fdd6c9925dae5568cf56fe8b92c))
+* install dependencies for release and check_release ([3b676c3](https://github.com/qejk/template-test/commit/3b676c3324e12b198d9821665baded33357381df))
+* install missing dependencies before formatting ([c75f127](https://github.com/qejk/template-test/commit/c75f127ec25fe1fb56ada9e929a00f112ed8e0c9))
+* invalid syntax ([2274ace](https://github.com/qejk/template-test/commit/2274ace6d1d296fe91a00c455742efdad379c678))
+* package.json prepare script ([0d0d498](https://github.com/qejk/template-test/commit/0d0d49843e4e50e8f3fba249384336e7a7fdd524))
+* pin node version ([361eecb](https://github.com/qejk/template-test/commit/361eecb5ab234170c9c6c901a41caca73dd17a46))
+* reference to author on automerge ([0bcb397](https://github.com/qejk/template-test/commit/0bcb397ce2f0e4402765a4cf3ae544c953d5dd02))
+* remove build process from formatting ([719ba85](https://github.com/qejk/template-test/commit/719ba856d6f73a3a33c0d79cb1b09f2c844de1a2))
+* remove formatting job ([798b866](https://github.com/qejk/template-test/commit/798b866feb221f3fd0065333997c8d7b61eba0df))
+* remove updating AUTHOR file on release job ([5409def](https://github.com/qejk/template-test/commit/5409defb77eabeabaf3de402c0aaf9550df774a9))
+* simplify workflow ([e5e5dab](https://github.com/qejk/template-test/commit/e5e5dabfb3a2bffbf024c3f4bc00e6001f31c94e))
+* simplify workflow to trigger automerge without integration tests ([3dcab99](https://github.com/qejk/template-test/commit/3dcab99047da76793e6f635d4ce604ff83b87c72))
+* test:format file paths ([cec48b4](https://github.com/qejk/template-test/commit/cec48b4a4267f1f80f1a34fcb5668caa634786f8))
+* wrong result of test ([d96026b](https://github.com/qejk/template-test/commit/d96026beb2e094ce71acf0dd38cdd21e1b728ccf))
+
+
+### Features
+
+* [foo-002] add multiply ([4d0a3ed](https://github.com/qejk/template-test/commit/4d0a3edbe24c5ef1944513bf512c092ac1c6d7ce))
+* [foo-002] add subtract ([89015c0](https://github.com/qejk/template-test/commit/89015c0a643f04d59d883603912802dc700b35e9))
+* [foo-009] add increment ([5078236](https://github.com/qejk/template-test/commit/50782363443e4454624344ac7045c26d60c2556b))
+* [foo-105] add divide ([09f842e](https://github.com/qejk/template-test/commit/09f842eb747b16d498eec5a7c7862104daa018a1))
 
 
 ### Reverts
