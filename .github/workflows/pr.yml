@@ -18,8 +18,7 @@ jobs:
     name: Fix misspells
     steps:
       - uses: actions/checkout@v2
-      - name: misspell
-        uses: reviewdog/action-misspell@v1
+      - uses: reviewdog/action-misspell@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           locale: 'US'
@@ -27,12 +26,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    name: Lint commits
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - uses: wagoid/commitlint-github-action@v1
-      - uses: actions/github-script@0.6.0
+      - name: Failed - remove conventional label
+        uses: actions/github-script@0.6.0
         if: failure() && contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -42,7 +43,8 @@ jobs:
                 name: 'conventional'
               })
             }
-      - uses: actions/github-script@0.6.0
+      - name: Success - add conventional label
+        uses: actions/github-script@0.6.0
         if: contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -65,7 +67,8 @@ jobs:
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
       - run: yarn test
-      - uses: actions/github-script@0.6.0
+      - name: Failed - remove test label
+        uses: actions/github-script@0.6.0
         if: failure() && contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -75,7 +78,8 @@ jobs:
                 name: 'tested'
               })
             }
-      - uses: actions/github-script@0.6.0
+      - name: Success - add test label
+        uses: actions/github-script@0.6.0
         if: contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -100,7 +104,8 @@ jobs:
         with:
           file: ./coverage.lcov
           fail_ci_if_error: true
-      - uses: actions/github-script@0.6.0
+      - name: Failed - remove covered label
+        uses: actions/github-script@0.6.0
         if: failure() && contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -110,7 +115,8 @@ jobs:
                 name: 'covered'
               })
             }
-      - uses: actions/github-script@0.6.0
+      - name: Success - add covered label
+        uses: actions/github-script@0.6.0
         if: contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -129,14 +135,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-check
           eslint_flags: 'src/**/*.ts'
-      - uses: actions/github-script@0.6.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.issues.addLabels({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
-              labels: ['linted']
-            })
-      - uses: actions/github-script@0.6.0
+      - name: Failed - remove linted label
+        uses: actions/github-script@0.6.0
         if: failure()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -146,11 +146,17 @@ jobs:
                 name: 'linted'
               })
             }
+      - name: Success - add linted label
+      - uses: actions/github-script@0.6.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.issues.addLabels({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
+              labels: ['linted']
+            })
   test_format:
     name: Format and push code back
     runs-on: ubuntu-latest
-    needs: [test_lint]
-    if: always()
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -183,7 +189,8 @@ jobs:
           git add -A
           git diff-index --quiet HEAD || git commit --allow-empty -m "style: add format changes 🤖" -a
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/${{ github.head_ref }} && exit 0
-      - uses: actions/github-script@0.6.0
+      - name: Failed - remove formatted label
+        uses: actions/github-script@0.6.0
         if: failure() && contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -193,7 +200,8 @@ jobs:
                 name: 'formatted'
               })
             }
-      - uses: actions/github-script@0.6.0
+      - name: Success - add formatted label
+        uses: actions/github-script@0.6.0
         if: contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -213,7 +221,8 @@ jobs:
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
       - run: yarn build
-      - uses: actions/github-script@0.6.0
+      - name: Failed - remove builds label
+        uses: actions/github-script@0.6.0
         if: failure() && contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -223,7 +232,8 @@ jobs:
                 name: 'builds'
               })
             }
-      - uses: actions/github-script@0.6.0
+      - name: Success - add builds label
+        uses: actions/github-script@0.6.0
         if: contains(env.isFork, 'false')
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
