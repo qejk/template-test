@@ -25,4 +25,13 @@ function subtract(a: number, b: number): number {
 function multiply(a: number, b: number): number {
   return a * b;
 }
-export { add, subtract, multiply };
+/**
+ * Divide a numbers by number.
+ * @param a - First number.
+ * @param b - Second number.
+ * @returns Number.
+ */
+function divide(a: number, b: number): number {
+  return a / b;
+}
+export { add, subtract, multiply, divide };

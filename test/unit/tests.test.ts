@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { add, subtract, multiply } from '../../src/index';
+import { add, subtract, multiply, divide } from '../../src/index';
 
 describe('tests', () => {
   it('add', () => {
@@ -12,5 +12,8 @@ describe('tests', () => {
 
   it('multiply', () => {
     expect(multiply(2, 2)).to.be.equal(4);
+  });
+  it('divide', () => {
+    expect(divide(2, 2)).to.be.equal(4);
   });
 });
