@@ -20,7 +20,9 @@ function increment(a) {
 const foo = 'foo';
 const baz = 'baz';
 const bar = 'bar';
+const abc = 'abc';
 
+exports.abc = abc;
 exports.add = add;
 exports.bar = bar;
 exports.baz = baz;

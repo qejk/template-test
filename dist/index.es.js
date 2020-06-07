@@ -16,5 +16,6 @@ function increment(a) {
 const foo = 'foo';
 const baz = 'baz';
 const bar = 'bar';
+const abc = 'abc';
 
-export { add, bar, baz, divide, foo, increment, multiply, subtract };
+export { abc, add, bar, baz, divide, foo, increment, multiply, subtract };
