@@ -6,6 +6,16 @@ env:
 on: [pull_request]
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node@13.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - name: Install dependencies
+        uses: jaid/action-npm-install@v1.2.1
   add_reviewers:
     runs-on: ubuntu-latest
     name: Assign reviewers
@@ -18,7 +28,7 @@ jobs:
     name: Fix misspells
     steps:
       - name: Check out code.
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: misspell
         uses: reviewdog/action-misspell@v1
         with:
@@ -87,14 +97,9 @@ jobs:
   validate_test_coverage:
     runs-on: ubuntu-latest
     name: Validate test coverage
+    needs: ['setup']
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node@13.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: '13.x'
-      - name: Install dependencies
-        uses: jaid/action-npm-install@v1.2.1
       - run: yarn test:coverage
       - run: yarn coverage:ci # Generate coverage.lcov report
       - uses: codecov/codecov-action@v1
@@ -205,14 +210,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Node@13.x / Build
+    needs: ['setup']
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node@13.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: '13.x'
-      - name: Install dependencies
-        uses: jaid/action-npm-install@v1.2.1
       - run: yarn build
       - uses: actions/github-script@0.6.0
         if: failure() && contains(env.isFork, 'false')
