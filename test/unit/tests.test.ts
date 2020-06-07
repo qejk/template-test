@@ -6,6 +6,7 @@ import {
   divide,
   increment,
   foo,
+  baz,
 } from '../../src/index';
 
 describe('tests', () => {
@@ -30,5 +31,8 @@ describe('tests', () => {
   });
   it('foo', () => {
     expect(foo).to.be.equal('foo');
+  });
+  it('baz', () => {
+    expect(baz).to.be.equal('baz');
   });
 });

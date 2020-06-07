@@ -44,5 +44,6 @@ function increment(a: number): number {
 }
 
 const foo = 'foo';
+const baz = 'baz';
 
-export { add, subtract, multiply, divide, increment, foo };
+export { add, subtract, multiply, divide, increment, foo, baz };
