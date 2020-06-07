@@ -14,6 +14,6 @@ describe('tests', () => {
     expect(multiply(2, 2)).to.be.equal(4);
   });
   it('divide', () => {
-    expect(divide(2, 2)).to.be.equal(4);
+    expect(divide(4, 2)).to.be.equal(2);
   });
 });
