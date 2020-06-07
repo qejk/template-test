@@ -248,17 +248,15 @@ jobs:
       PR_NUMBER: ${{ format('{0}{1}', github.event.pull_request.number, github.event.issue.number) }}
     # IF event type is non fork PR or comment on PR from qejk with '/release'
     if: >-
-      (
-        contains(github.event.comment.body, '/release')
-        contains(github.event.pull_request.labels.*.name, 'formatted')
-        && contains(github.event.pull_request.labels.*.name, 'linted')
-        && contains(github.event.pull_request.labels.*.name, 'conventional')
-        && contains(github.event.pull_request.labels.*.name, 'builds')
-        && contains(github.event.pull_request.labels.*.name, 'tested')
-        && contains(github.event.pull_request.labels.*.name, 'covered')
-        && ! contains(github.event.pull_request.labels.*.name, 'automated merge')
-        && ! contains(github.event.pull_request.labels.*.name, 'hold merge')
-      )
+      contains(github.event.comment.body, '/release')
+      && contains(github.event.pull_request.labels.*.name, 'formatted')
+      && contains(github.event.pull_request.labels.*.name, 'linted')
+      && contains(github.event.pull_request.labels.*.name, 'conventional')
+      && contains(github.event.pull_request.labels.*.name, 'builds')
+      && contains(github.event.pull_request.labels.*.name, 'tested')
+      && contains(github.event.pull_request.labels.*.name, 'covered')
+      && ! contains(github.event.pull_request.labels.*.name, 'automated merge')
+      && ! contains(github.event.pull_request.labels.*.name, 'hold merge')
     steps:
       # IF formatted, builds, and tested labels then merge
       - name: On formatted, builds, tested, covered, linted, merge automerge pr
