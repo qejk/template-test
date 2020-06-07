@@ -18,6 +18,34 @@
 
 * [foo-023] add bar ([ef74946](https://github.com/qejk/template-test/commit/ef74946d3c11fb6b58ef7761b71312b7a2dad5a5))
 * add abc ([c9f3913](https://github.com/qejk/template-test/commit/c9f39133bca4e3c980e9f2b9dad1a31c7563166d))
+* add assigning authors to AUTHORS on PR ([1a3579c](https://github.com/qejk/template-test/commit/1a3579cad0f26bd52aa56953898e6671819910d9))
+* add baz ([175a050](https://github.com/qejk/template-test/commit/175a050cb8f40778ec20d33d68ffea6fda39c27f))
+
+
+### Performance Improvements
+
+* speed up setup process ([e7bec0e](https://github.com/qejk/template-test/commit/e7bec0e8911db4f786e18b7a1a05a296e1e84f5c))
+
+# [1.2.0](https://github.com/qejk/template-test/compare/v1.1.0...v1.2.0) (2020-06-07)
+
+
+### Bug Fixes
+
+* automerge ([9a3e5f5](https://github.com/qejk/template-test/commit/9a3e5f5536ec1655b89392fba5b242ec911cea17))
+* automerge ([00e7e80](https://github.com/qejk/template-test/commit/00e7e80399f6bb7f4ec014a248db61c4b264ff5f))
+* automerge ([cd6a4ee](https://github.com/qejk/template-test/commit/cd6a4ee2e1d6fb13ece5e7038b183b7c8c2ea1c3))
+* github actor on automerge ([bce7b32](https://github.com/qejk/template-test/commit/bce7b32eb52bcf18c2651525b8adc63113b2cffa))
+* move automerge to pr action ([bae6a7a](https://github.com/qejk/template-test/commit/bae6a7a389b4ece1b2b0d7fc1b30a9df02c30ccf))
+* setup job ([7e85642](https://github.com/qejk/template-test/commit/7e85642defdffd11618fff68da8448f6de03250b))
+* syntax ([fb2a0e9](https://github.com/qejk/template-test/commit/fb2a0e95c941715c8bdeb2ad3c06df39e5f8903e))
+* syntax ([276fd6c](https://github.com/qejk/template-test/commit/276fd6c58840b499d23b4d3c21290702fbaea857))
+* workflows ([01266ce](https://github.com/qejk/template-test/commit/01266ce79c33974ac15192f125b915b5a640cadb))
+
+
+### Features
+
+* [foo-023] add bar ([ef74946](https://github.com/qejk/template-test/commit/ef74946d3c11fb6b58ef7761b71312b7a2dad5a5))
+* add abc ([c9f3913](https://github.com/qejk/template-test/commit/c9f39133bca4e3c980e9f2b9dad1a31c7563166d))
 * add baz ([175a050](https://github.com/qejk/template-test/commit/175a050cb8f40778ec20d33d68ffea6fda39c27f))
 
 
