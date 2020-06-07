@@ -8,6 +8,7 @@ on: [pull_request]
 jobs:
   setup:
     runs-on: ubuntu-latest
+    name: Setup
     steps:
       - uses: actions/checkout@v2
       - name: Setup Node@13.x
@@ -27,7 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Fix misspells
     steps:
-      - name: Check out code.
       - uses: actions/checkout@v2
       - name: misspell
         uses: reviewdog/action-misspell@v1
