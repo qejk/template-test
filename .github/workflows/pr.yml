@@ -230,15 +230,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Action"
           git log --format='%aN <%aE>%n%cN <%cE>' | sort -u > AUTHORS
-          sed -i '/${{ env.USERNAME }}/d' AUTHORS
-          sed -i '/semantic-release-bot/d' AUTHORS
-          sed -i '/GitHub <noreply@github.com>/d' AUTHORS
-          sed -i '/GitHub Action <github-actions[bot]@users.noreply.github.com>/d' AUTHORS
-          sed -i '/zeke@github.com/d' AUTHORS
-          sed -i '/zeke@sikelianos.com/d' AUTHORS
-          sed -i '/github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>/d' AUTHORS
-          sed -i '/dependabot/d' AUTHORS
+          sed -i.bak '/semantic-release-bot/d' AUTHORS
+          sed -i.bak '/GitHub <noreply@github.com>/d' AUTHORS
+          sed -i.bak '/github.com/d' AUTHORS
+          sed -i.bak '/dependabot/d' AUTHORS
           echo -e "\r\n$(date)" >> AUTHORS
           git add -A
           git diff-index --quiet HEAD || git commit --allow-empty -m "chore: update AUTHORS 📓" -a

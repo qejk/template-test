@@ -47,5 +47,6 @@ const foo = 'foo';
 const baz = 'baz';
 const bar = 'bar';
 const abc = 'abc';
+const def = 'def';
 
-export { add, subtract, multiply, divide, increment, foo, baz, bar, abc };
+export { add, subtract, multiply, divide, increment, foo, baz, bar, abc, def };
