@@ -10,6 +10,7 @@ import {
   bar,
   abc,
   def,
+  ghi,
 } from '../../src/index';
 
 describe('tests', () => {
@@ -46,5 +47,8 @@ describe('tests', () => {
   });
   it('def', () => {
     expect(def).to.be.equal('def');
+  });
+  it('ghi', () => {
+    expect(ghi).to.be.equal('ghi');
   });
 });
