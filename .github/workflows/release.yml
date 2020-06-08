@@ -112,6 +112,8 @@ jobs:
         uses: jaid/action-npm-install@v1.2.1
       - name: Build docs
         run: yarn docs
+      - name: Fix 404 Page not found
+        run: touch docs/.nojekyll
       - name: Deploy documentation to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
