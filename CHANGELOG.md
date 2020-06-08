@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/qejk/template-test/compare/v1.3.0...v1.3.1) (2020-06-08)
+
+
+### Bug Fixes
+
+* nojekyll ([5c9dbb4](https://github.com/qejk/template-test/commit/5c9dbb4009ba83c2ae51651240f3347fa2ea7e95))
+
 # [1.3.0](https://github.com/qejk/template-test/compare/v1.2.0...v1.3.0) (2020-06-08)
 
 
