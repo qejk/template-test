@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/qejk/template-test/compare/v1.3.1...v1.3.2) (2020-06-08)
+
+
+### Bug Fixes
+
+* order of running jobs ([5a1899d](https://github.com/qejk/template-test/commit/5a1899dc0425790647839b27d5c4546afda47b4b))
+
 ## [1.3.1](https://github.com/qejk/template-test/compare/v1.3.0...v1.3.1) (2020-06-08)
 
 
