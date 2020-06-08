@@ -188,10 +188,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           git diff-index --quiet HEAD || git commit --allow-empty -m "style: add format changes 🤖" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/${{ github.head_ref }} && exit 0
       - name: Failed - remove formatted label
         uses: actions/github-script@0.6.0
         if: failure() && contains(env.isFork, 'false')
@@ -243,10 +240,7 @@ jobs:
           echo -e "\r\n$(date)" >> AUTHORS
           git add -A
           git diff-index --quiet HEAD || git commit --allow-empty -m "chore: update AUTHORS 📓" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/${{ github.head_ref }} && exit 0
   build:
     runs-on: ubuntu-latest
     name: Build
