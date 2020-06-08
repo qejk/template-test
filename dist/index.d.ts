@@ -7,4 +7,5 @@ declare const foo = "foo";
 declare const baz = "baz";
 declare const bar = "bar";
 declare const abc = "abc";
-export { add, subtract, multiply, divide, increment, foo, baz, bar, abc };
+declare const def = "def";
+export { add, subtract, multiply, divide, increment, foo, baz, bar, abc, def };

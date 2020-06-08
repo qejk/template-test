@@ -21,11 +21,13 @@ const foo = 'foo';
 const baz = 'baz';
 const bar = 'bar';
 const abc = 'abc';
+const def = 'def';
 
 exports.abc = abc;
 exports.add = add;
 exports.bar = bar;
 exports.baz = baz;
+exports.def = def;
 exports.divide = divide;
 exports.foo = foo;
 exports.increment = increment;
