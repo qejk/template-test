@@ -48,5 +48,18 @@ const baz = 'baz';
 const bar = 'bar';
 const abc = 'abc';
 const def = 'def';
+const ghi = 'ghi';
 
-export { add, subtract, multiply, divide, increment, foo, baz, bar, abc, def };
+export {
+  add,
+  subtract,
+  multiply,
+  divide,
+  increment,
+  foo,
+  baz,
+  bar,
+  abc,
+  def,
+  ghi,
+};
