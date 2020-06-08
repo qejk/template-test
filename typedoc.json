@@ -12,7 +12,7 @@
   "suppressImplicitAnyIndexErrors": "true",
   "module": "ESNext",
   "version": true,
-  "excludePrivate": false,
+  "excludePrivate": true,
   "excludeNotExported": false,
   "excludeProtected": false
 }
