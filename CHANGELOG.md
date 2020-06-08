@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/qejk/template-test/compare/v1.2.0...v1.3.0) (2020-06-08)
+
+
+### Features
+
+* add ghi ([7eab1cc](https://github.com/qejk/template-test/commit/7eab1cc71517695ea95ea331bdd3e9a54e2f83e6))
+
+
+### Reverts
+
+* use of github-push-action ([4414717](https://github.com/qejk/template-test/commit/4414717521a485d530e0b24d7a54b369a634752f))
+
 # [1.2.0](https://github.com/qejk/template-test/compare/v1.1.0...v1.2.0) (2020-06-08)
 
 
