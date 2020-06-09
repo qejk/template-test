@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const connect = require('gulp-connect');
 const typedoc = require('gulp-typedoc');
-const typedocConfig = require('./typedoc.json');
+const typedocConfig = require('./typedoc-website.json');
 
 /*
 [!} IMPORTANT

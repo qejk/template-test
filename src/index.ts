@@ -1,3 +1,5 @@
+export { Calculator } from './calculator';
+
 /**
  * Adds a number to number.
  * @param a - First number.

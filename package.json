@@ -78,6 +78,7 @@
     "ts-node": "^8.10.1",
     "ts-sinon": "^1.2.0",
     "typedoc": "^0.17.7",
+    "typedoc-plugin-markdown": "^2.3.1",
     "typescript": "^3.9.3"
   },
   "scripts": {
@@ -91,7 +92,11 @@
     "coverage": "./node_modules/.bin/nyc yarn test",
     "cz": "node_modules/.bin/git-cz",
     "docs:watch": "node_modules/.bin/gulp docs:watch",
-    "docs": "rimraf docs && node_modules/.bin/gulp docs:build",
+    "docs:clean": "rimraf docs",
+    "docs": "yarn docs:clean && node_modules/.bin/gulp docs:build",
+    "docs2:id": "typedoc src/ --out docs/ --mode file --plugin typedoc-plugin-markdown --theme docusaurus2 --skipSidebar",
+    "docs2:web": "rm docs/id/index.md && rm docs/cube/index.md && cp -r docs/id website/docs/ && cp -r docs/cube website/docs/ && git checkout website/sidebars.js",
+    "docs2": "yarn docs:clean && ./node_modules/.bin/typedoc --tsconfig typedoc-markdown.json --theme docusaurus2 --skipSidebar --mode file --out docs",
     "format": "node_modules/typescript/bin/tsc --noEmit && ./node_modules/.bin/prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "info": "npm-scripts-info",
     "lint": "./node_modules/.bin/eslint --fix 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",

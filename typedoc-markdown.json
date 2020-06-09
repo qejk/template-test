@@ -1,0 +1,11 @@
+{
+  "inputFiles": ["./src/*"],
+  "mode": "modules",
+  "ignoreCompilerErrors": true,
+  "out": "docs",
+  "experimentalDecorators": "true",
+  "emitDecoratorMetadata": "true",
+  "disableOutputCheck": true,
+  "excludeExternals": true,
+  "excludePrivate": true
+}
