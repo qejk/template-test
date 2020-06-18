@@ -11,6 +11,7 @@ import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import project from './.eveble/project.json';
 
 function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   const toUrl = useBaseUrl(to);
@@ -111,7 +112,9 @@ export default function Footer() {
                     )}
                   </div>
                 )}
-                <div className="license">Released under MIT License</div>
+                <div className="license">
+                  Released under {project.license} License
+                </div>
                 <div
                   className="copyright"
                   dangerouslySetInnerHTML={{
