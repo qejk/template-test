@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [13.x, 14.x]
+        node-version: [14.x]
     name: Tests / Node@${{ matrix.node-version}}
     steps:
       - uses: actions/checkout@v2
@@ -92,10 +92,10 @@ jobs:
     name: Validate test coverage
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node@13.x
+      - name: Setup Node@14.x
         uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
+          node-version: '14.x'
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
       - run: yarn test:coverage
@@ -170,10 +170,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
-      - name: Setup Node@13.x
+      - name: Setup Node@14.x
         uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
+          node-version: '14.x'
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
       - run: yarn test:format
@@ -233,10 +233,10 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Action"
           git log --format='%aN <%aE>%n%cN <%cE>' | sort -u > AUTHORS
-          sed -i.bak '/semantic-release-bot/d' AUTHORS
-          sed -i.bak '/GitHub <noreply@github.com>/d' AUTHORS
-          sed -i.bak '/github.com/d' AUTHORS
-          sed -i.bak '/dependabot/d' AUTHORS
+          sed -i '/semantic-release-bot/d' AUTHORS
+          sed -i '/GitHub <noreply@github.com>/d' AUTHORS
+          sed -i '/github.com/d' AUTHORS
+          sed -i '/dependabot/d' AUTHORS
           git add -A
           git diff-index --quiet HEAD || git commit --allow-empty -m "chore: update AUTHORS 📓" -a
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/${{ github.head_ref }} && exit 0
@@ -245,10 +245,10 @@ jobs:
     name: Build
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node@13.x
+      - name: Setup Node@14.x
         uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
+          node-version: '14.x'
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
       - run: yarn build
