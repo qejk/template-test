@@ -237,7 +237,6 @@ jobs:
           sed -i.bak '/GitHub <noreply@github.com>/d' AUTHORS
           sed -i.bak '/github.com/d' AUTHORS
           sed -i.bak '/dependabot/d' AUTHORS
-          echo -e "\r\n$(date)" >> AUTHORS
           git add -A
           git diff-index --quiet HEAD || git commit --allow-empty -m "chore: update AUTHORS 📓" -a
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:refs/heads/${{ github.head_ref }} && exit 0

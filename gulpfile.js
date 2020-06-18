@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const connect = require('gulp-connect');
 const typedoc = require('gulp-typedoc');
 const typedocConfig = require('./typedoc.json');
+const shell = require('gulp-shell');
 
 /*
 [!} IMPORTANT
@@ -24,11 +25,23 @@ function serveTask(done) {
 }
 
 function watchTypeScriptTask(done) {
-  gulp
-    .watch('src/**/*.ts')
-    .on('change', (filepath) =>
-      gulp.src(filepath, { read: false }).pipe(typedoc({ ...typedocConfig }))
-    );
+  gulp.watch('src/**/*.ts').on('change', (filepath) =>
+    gulp
+      .src(filepath, { read: false })
+      /*
+      Using typedoc from 'gulp-typedoc' throws error
+      related to `typedoc-plugin-markdown` - without that plugin
+      everything works fine i.e.:
+      ...pipe(typedoc({ ...typedocConfig }))
+
+      This also generates new project.json file on ./website/.internals/project.json. This however will require reload of Docusaurus is new files are present.
+      */
+      .pipe(
+        shell([
+          './node_modules/.bin/typedoc <%= file.path %> && && node ./.internals/scripts/docs.js',
+        ])
+      )
+  );
   done();
 }
 

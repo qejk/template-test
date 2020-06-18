@@ -1,0 +1,69 @@
+.hero--container div.row div.col.col--8 {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.row.package {
+  margin-bottom: 2rem;
+}
+
+.package--name {
+  font-family: 'Montserrat';
+  color: var(--ifm-color-dark);
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  padding: 1rem 2rem 1rem 1rem;
+  background-repeat: no-repeat;
+  background-image: url('/img/hero-gradient.png');
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 1em;
+  position: relative;
+}
+/* @ symbol on scoped packages is rendered separately */
+.package--name span {
+  background-repeat: no-repeat;
+  background-image: url('/img/hero-gradient.png');
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  right: 6px;
+  top: 8px;
+}
+
+.package--information p {
+  font-family: 'Poppins';
+  letter-spacing: -0.91px;
+  padding: 1rem 2rem 1rem 1rem;
+  margin-top: 1rem;
+}
+
+.package--description {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--ifm-color-dark);
+  line-height: 2.3rem;
+}
+
+p.under-development {
+  font-family: 'Mukta', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 0.4rem;
+}
+
+p.under-development span {
+  font-weight: 600;
+  color: #ec2ca8;
+}
+
+html[data-theme='dark'] .under-development {
+  color: var(--ifm-color-dark);
+}
+html[data-theme='dark'] .package--information p {
+  color: var(--ifm-font-color-base-inverse);
+}

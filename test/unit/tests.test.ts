@@ -11,9 +11,19 @@ import {
   abc,
   def,
   ghi,
+  Calculator,
 } from '../../src/index';
 
 describe('tests', () => {
+  describe('Calculator', () => {
+    it('returns true for zero number', () => {
+      expect(new Calculator().isZero(0)).to.be.true;
+    });
+    it('returns false for non-zero number', () => {
+      expect(new Calculator().isZero(1)).to.be.false;
+    });
+  });
+
   it('add', () => {
     expect(add(1, 2)).to.be.equal(3);
   });

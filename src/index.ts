@@ -1,3 +1,12 @@
+export { Calculator } from './calculator';
+
+export interface MyInterface {
+  myMethod(arg: string): string;
+  myOtherMethod(arg: number): number;
+}
+
+export type MyType = string;
+
 /**
  * Adds a number to number.
  * @param a - First number.
