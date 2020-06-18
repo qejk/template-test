@@ -11,6 +11,6 @@ export class Calculator {
    *```
    */
   isZero(arg: number): boolean {
-    return arg !== 0;
+    return arg === 0;
   }
 }
