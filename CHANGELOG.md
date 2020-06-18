@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/qejk/template-test/compare/v1.4.1...v1.4.2) (2020-06-18)
+
+
+### Bug Fixes
+
+* missing dev dependency inquirer ([c720ead](https://github.com/qejk/template-test/commit/c720ead01e3175cbee87d47d7be1c016012e531f))
+
 ## [1.4.1](https://github.com/qejk/template-test/compare/v1.4.0...v1.4.1) (2020-06-18)
 
 
