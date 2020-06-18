@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/qejk/template-test/compare/v1.5.0...v1.5.1) (2020-06-18)
+
+
+### Bug Fixes
+
+* await on generating documentation ([88a3058](https://github.com/qejk/template-test/commit/88a3058a7580b0a931dabe33f68342f7a5532a6c))
+
 # [1.5.0](https://github.com/qejk/template-test/compare/v1.4.2...v1.5.0) (2020-06-18)
 
 
