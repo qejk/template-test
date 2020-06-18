@@ -117,4 +117,4 @@ project.interfaces = interfacesFiles.map((path) => {
 project.guides = normalizeRootDirs(listFilesInDir(paths.guides, {}));
 
 const stringifiedData = JSON.stringify(project, null, 2);
-fs.writeFileSync('./website/.internals/project.json', stringifiedData);
+fs.writeFileSync('./website/.eveble/project.json', stringifiedData);

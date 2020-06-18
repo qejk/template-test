@@ -34,11 +34,11 @@ function watchTypeScriptTask(done) {
       everything works fine i.e.:
       ...pipe(typedoc({ ...typedocConfig }))
 
-      This also generates new project.json file on ./website/.internals/project.json. This however will require reload of Docusaurus is new files are present.
+      This also generates new project.json file on ./website/.eveble/project.json. This however will require reload of Docusaurus is new files are present.
       */
       .pipe(
         shell([
-          './node_modules/.bin/typedoc <%= file.path %> && && node ./.internals/scripts/docs.js',
+          './node_modules/.bin/typedoc <%= file.path %> && && node ./.eveble/scripts/docs.js',
         ])
       )
   );

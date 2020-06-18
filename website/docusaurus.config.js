@@ -1,4 +1,4 @@
-const project = require('./.internals/project.json');
+const project = require('./.eveble/project.json');
 
 module.exports = {
   title: project.title,
