@@ -1,3 +1,11 @@
+## [1.4.1](https://github.com/qejk/template-test/compare/v1.4.0...v1.4.1) (2020-06-18)
+
+
+### Bug Fixes
+
+* missing dependency compare-version ([911682f](https://github.com/qejk/template-test/commit/911682f9eba4f706248fda9645e8fdff083202bc))
+* missing dev dependencies ([9d52af3](https://github.com/qejk/template-test/commit/9d52af31d6689d2fe3975a4131c8082be081c6a5))
+
 # [1.4.0](https://github.com/qejk/template-test/compare/v1.3.2...v1.4.0) (2020-06-18)
 
 
