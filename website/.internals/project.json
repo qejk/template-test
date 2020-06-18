@@ -1,0 +1,21 @@
+{
+  "title": "template-test",
+  "tagline": "Template project for creating libraries",
+  "url": "https://qejk.github.io/template-test/",
+  "organizationName": "Eveble",
+  "projectName": "template-test",
+  "organizationUrl": "https://eveble.com",
+  "projectUrl": "https://github.com/qejk/template-test",
+  "apiPathTo": "docs/api/classes/calculator",
+  "classes": ["api/classes/calculator", "api/classes/wzttzcsestcalculator"],
+  "interfaces": ["api/interfaces/myinterface"],
+  "guides": {
+    "The-basics": [
+      "guides/0-the-basics/doc3",
+      "guides/0-the-basics/getting-started",
+      "guides/0-the-basics/introduction",
+      "guides/0-the-basics/setup"
+    ],
+    "Other": ["guides/1-other/debugging"]
+  }
+}
