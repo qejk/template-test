@@ -428,10 +428,10 @@ function updateDocumentation() {
   const interval = animateProgress('Generating new documentation');
   return new Promise((resolve, reject) => {
     exec('npm run docs', (err, stdout) => {
+      clearInterval(interval);
       if (err) {
         reject(new Error(err));
       } else {
-        clearInterval(interval);
         resolve(stdout);
       }
     });
