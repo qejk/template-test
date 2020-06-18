@@ -110,7 +110,7 @@
     "info": "npm-scripts-info",
     "lint": "./node_modules/.bin/eslint --fix 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "prepare": "yarn format && yarn lint && yarn build",
-    "presetup": "npm i chalk shelljs compare-versions --no-save",
+    "presetup": "npm i chalk shelljs compare-versions inquirer --no-save",
     "setup": "node ./.internals/scripts/setup.js",
     "reset": "git clean -dfx && git reset --hard && npm i",
     "semantic-release": "semantic-release",
