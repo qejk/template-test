@@ -22,7 +22,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           locale: 'US'
-          exclude: package.json
   commitlint:
     runs-on: ubuntu-latest
     env:
