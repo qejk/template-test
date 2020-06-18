@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/qejk/template-test/compare/v1.4.2...v1.5.0) (2020-06-18)
+
+
+### Features
+
+* extend setup to clear files ([fa53c25](https://github.com/qejk/template-test/commit/fa53c255efbe280e70b8566c271d03ad633f5953))
+
 ## [1.4.2](https://github.com/qejk/template-test/compare/v1.4.1...v1.4.2) (2020-06-18)
 
 
