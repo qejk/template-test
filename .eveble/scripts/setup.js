@@ -425,11 +425,13 @@ function updateNpmConfig(projectDetails) {
  * @returns {Promise<any>}
  */
 function updateDocumentation() {
+  const interval = animateProgress('Generating new documentation');
   return new Promise((resolve, reject) => {
     exec('npm run docs', (err, stdout) => {
       if (err) {
         reject(new Error(err));
       } else {
+        clearInterval(interval);
         resolve(stdout);
       }
     });
@@ -466,7 +468,7 @@ function updateDocumentation() {
 
   const projectDetails = await askUserAboutProjectDetails();
   updateNpmConfig(projectDetails);
-  updateDocumentation();
+  await updateDocumentation();
 
   if (repoRemoved) {
     process.stdout.write('\n');
