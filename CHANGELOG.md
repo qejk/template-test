@@ -1,3 +1,24 @@
+# [1.4.0](https://github.com/qejk/template-test/compare/v1.3.2...v1.4.0) (2020-06-18)
+
+
+### Bug Fixes
+
+* exclude package.json when checking for misspells ([d8e9803](https://github.com/qejk/template-test/commit/d8e980327986652da4f8c251c8131d20bcb13a6d))
+* missing script and typo ([0436350](https://github.com/qejk/template-test/commit/043635028f93fd9f13730639c561f7e52be3333d))
+* remove dating AUTHORS file for uncessary date change commits ([fc7073e](https://github.com/qejk/template-test/commit/fc7073e7c7c34b81f2fe50f84ebe67cd6f97b55a))
+* wrong operator ([f500648](https://github.com/qejk/template-test/commit/f50064800aefb865a57b750ae7b4549871b3abc6))
+
+
+### Features
+
+* add docusaurus2 ([f13ed7a](https://github.com/qejk/template-test/commit/f13ed7a01edc0cb7854471c14429b3f44e1ccb2f))
+* add setup ([3ba6c28](https://github.com/qejk/template-test/commit/3ba6c28d3ff842184bb3932392c874efaf6b9d6a))
+
+
+### Reverts
+
+* exclude on misspell ([2f388ae](https://github.com/qejk/template-test/commit/2f388ae4a85928c1a516ff0e2fd7c0b2ec2ef16d))
+
 ## [1.3.2](https://github.com/qejk/template-test/compare/v1.3.1...v1.3.2) (2020-06-08)
 
 
