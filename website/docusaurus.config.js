@@ -83,7 +83,7 @@ module.exports = {
         project.organizationUrl
       }" target="_blank">${
         project.organizationName
-      }</a>. Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</.> <span class="love"></span>`,
+      }</a>. Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a> <span class="love"></span>`,
     },
   },
   presets: [
