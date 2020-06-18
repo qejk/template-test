@@ -113,7 +113,7 @@ async function askUserIfWeShouldRemoveRepo() {
     {
       type: 'confirm',
       name: 'isNew',
-      message: 'Do you want to start with a new repository?',
+      message: 'Do you want to start with a new repository',
       default: 'y',
     },
   ]);
@@ -330,7 +330,7 @@ async function askUserAboutUsedPackageManager() {
     {
       type: 'list',
       name: 'packageManager',
-      message: 'Which package manager do you want to use?',
+      message: 'Which package manager do you want to use',
       choices: ['npm', 'yarn', 'pnpm'],
       filter: function (val) {
         return val.toLowerCase();
@@ -387,6 +387,12 @@ async function askUserAboutProjectDetails() {
       message: "What's the project's license",
       default: 'MIT',
     },
+    {
+      type: 'confirm',
+      name: 'private',
+      message: 'Do you want this repository to be private',
+      default: 'y',
+    },
   ];
   const answer = await inquirer.prompt(questions);
   answer.author = {
@@ -394,6 +400,9 @@ async function askUserAboutProjectDetails() {
     email: answer.authorEmail,
     url: answer.authorHomepage,
   };
+  delete answer.authorName;
+  delete answer.authorEmail;
+  delete answer.authorHomepage;
   return answer;
 }
 
@@ -402,9 +411,13 @@ async function askUserAboutProjectDetails() {
  * @param {Object} projectDetails - New project details.
  */
 function updateNpmConfig(projectDetails) {
+  projectDetails.version = '0.0.0-development';
   const newNpmConfig = Object.assign({}, npmConfig, projectDetails);
   const stringifiedData = JSON.stringify(newNpmConfig, null, 2);
   fs.writeFileSync('./package.json', stringifiedData);
+  fs.writeFileSync('./CHANGELOG.md', '');
+  fs.writeFileSync('./LICENSE', '');
+  fs.writeFileSync('./AUTHORS', '');
 }
 
 /**
