@@ -54,6 +54,33 @@ const MainHeader = styled(Header)`
   padding-bottom: 2rem;
 `;
 
+const PackageName = styled.div`
+  font-family: 'Montserrat';
+  color: var(--ifm-color-dark);
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  padding: 1rem 2rem 1rem 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 1em;
+  position: relative;
+`;
+
+// @ symbol on scoped packages is rendered separately
+const AtSymbol = styled.span`
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  right: 6px;
+  top: 8px;
+`;
+
 function ActionContainer() {
   return (
     <div className="container action--container">
@@ -90,12 +117,24 @@ function PackageContainer() {
   return (
     <div className="row package">
       <div className="col col--2 text--right"></div>
-      <div className="package--name col col--4 text--right">
+      <PackageName
+        style={{
+          backgroundImage: `url(${useBaseUrl('/img/hero-gradient.png')})`,
+        }}
+        className="package--name col col--4 text--right"
+      >
         <Title>
-          <span className="pixelated">@</span>
+          <AtSymbol
+            style={{
+              backgroundImage: `url(${useBaseUrl('/img/hero-gradient.png')})`,
+            }}
+            className="pixelated"
+          >
+            @
+          </AtSymbol>
           {siteConfig.title.replace('@', '').replace('/', '/\n')}
         </Title>
-      </div>
+      </PackageName>
       <div className="package--information col col--4 text--left">
         <p className="package--description">{siteConfig.tagline}</p>
         <p className="under-development">

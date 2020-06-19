@@ -7,34 +7,6 @@
   margin-bottom: 2rem;
 }
 
-.package--name {
-  font-family: 'Montserrat';
-  color: var(--ifm-color-dark);
-  line-height: 1.8rem;
-  letter-spacing: 0;
-  padding: 1rem 2rem 1rem 1rem;
-  background-repeat: no-repeat;
-  background-image: url('/img/hero-gradient.png');
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: 1em;
-  position: relative;
-}
-/* @ symbol on scoped packages is rendered separately */
-.package--name span {
-  background-repeat: no-repeat;
-  background-image: url('/img/hero-gradient.png');
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  position: relative;
-  right: 6px;
-  top: 8px;
-}
-
 .package--information p {
   font-family: 'Poppins';
   letter-spacing: -0.91px;
