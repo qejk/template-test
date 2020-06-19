@@ -111,7 +111,9 @@ jobs:
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
       - name: Install dependencies on Docusaurus
-        run: cd ./website && yarn install
+        run: |
+          cd ./website
+          yarn install
       - name: Build docs
         run: yarn docs
   docs:
@@ -126,6 +128,10 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
+      - name: Install dependencies on Docusaurus
+        run: |
+          cd ./website
+          yarn install
       - name: Build docs
         run: yarn docs
       - name: Fix 404 Page not found for Github in case .nojekyll is missing in ./website/static

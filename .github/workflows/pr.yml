@@ -284,7 +284,9 @@ jobs:
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
       - name: Install dependencies on Docusaurus
-        run: cd ./website && yarn install
+        run: |
+          cd ./website
+          yarn install
       - run: yarn docs
       - name: Failed - remove documented label
         uses: actions/github-script@0.6.0
