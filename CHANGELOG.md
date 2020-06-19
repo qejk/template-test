@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/qejk/template-test/compare/v1.7.0...v1.7.1) (2020-06-19)
+
+
+### Bug Fixes
+
+* temp remove publishing to Github Package Registry ([37e11f5](https://github.com/qejk/template-test/commit/37e11f5436f1991058a3b7271b7d9556c7873e57))
+
 # [1.7.0](https://github.com/qejk/template-test/compare/v1.6.0...v1.7.0) (2020-06-19)
 
 
