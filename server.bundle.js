@@ -1343,6 +1343,20 @@ module.exports = Token;
 
 /***/ }),
 /* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return useBaseUrl; });
+/* harmony import */ var _useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function useBaseUrl(url){const{siteConfig}=Object(_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])();const{baseUrl='/'}=siteConfig||{};if(!url){return url;}const externalRegex=/^(https?:|\/\/)/;if(externalRegex.test(url)){return url;}if(url.startsWith('/')){return baseUrl+url.slice(1);}return baseUrl+url;}
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var helpers = __webpack_require__(77);
@@ -1400,7 +1414,7 @@ module.exports = {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var fs = __webpack_require__(22)
@@ -1758,20 +1772,6 @@ function retry () {
   }
 }
 
-
-/***/ }),
-/* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return useBaseUrl; });
-/* harmony import */ var _useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function useBaseUrl(url){const{siteConfig}=Object(_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])();const{baseUrl='/'}=siteConfig||{};if(!url){return url;}const externalRegex=/^(https?:|\/\/)/;if(externalRegex.test(url)){return url;}if(url.startsWith('/')){return baseUrl+url.slice(1);}return baseUrl+url;}
 
 /***/ }),
 /* 12 */
@@ -8134,7 +8134,7 @@ var isInternalUrl = __webpack_require__(19);
 var useDocusaurusContext = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useBaseUrl.js
-var useBaseUrl = __webpack_require__(11);
+var useBaseUrl = __webpack_require__(9);
 
 // CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/src/theme/hooks/useTheme.js
 /**
@@ -9987,7 +9987,7 @@ module.exports = hasProtocol;
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 
 const NODE_VERSION_MAJOR_WITH_BIGINT = 10
@@ -10300,7 +10300,7 @@ var isInternalUrl = __webpack_require__(19);
 var useDocusaurusContext = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useBaseUrl.js
-var useBaseUrl = __webpack_require__(11);
+var useBaseUrl = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
 var Link = __webpack_require__(13);
@@ -11462,7 +11462,7 @@ function renderRoutes(routes, extraProps, switchProps) {
 "use strict";
 /* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /* harmony import */ var _theme_hooks_useThemeContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(34);
-/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
 /* harmony import */ var _docusaurus_isInternalUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -12632,8 +12632,8 @@ module.exports = restoreWithComponents;
 // Properties will be tokenized in one step, see #429
 
 var Token = __webpack_require__(8);
-var serializeRules = __webpack_require__(9).rules;
-var serializeValue = __webpack_require__(9).value;
+var serializeRules = __webpack_require__(10).rules;
+var serializeValue = __webpack_require__(10).value;
 
 function extractProperties(token) {
   var properties = [];
@@ -14641,7 +14641,7 @@ module.exports =
 // This is adapted from https://github.com/normalize/mz
 // Copyright (c) 2014-2016 Jonathan Ong me@jongleberry.com and Contributors
 const u = __webpack_require__(14).fromCallback
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 
 const api = [
   'access',
@@ -14805,7 +14805,7 @@ module.exports = {
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const os = __webpack_require__(92)
 const path = __webpack_require__(6)
 
@@ -17982,7 +17982,7 @@ var styles_module = __webpack_require__(41);
 var styles_module_default = /*#__PURE__*/__webpack_require__.n(styles_module);
 
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useBaseUrl.js
-var useBaseUrl = __webpack_require__(11);
+var useBaseUrl = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./node_modules/classnames/index.js
 var classnames = __webpack_require__(4);
@@ -18070,7 +18070,30 @@ const ActionButton=styled_components_esm.a`
 `;const MainHeader=styled_components_esm(Header)`
   padding-top: 2rem;
   padding-bottom: 2rem;
-`;function ActionContainer(){return/*#__PURE__*/react_default.a.createElement("div",{className:"container action--container"},/*#__PURE__*/react_default.a.createElement("div",{className:"row"},/*#__PURE__*/react_default.a.createElement("div",{className:"col col--3 text--center col--offset-3"},/*#__PURE__*/react_default.a.createElement(ActionButton,{className:"button button--action button--primary",type:"primary",href:'#quick-start',target:"_self"},"QUICK START")),/*#__PURE__*/react_default.a.createElement("div",{className:"col col--3 text--center"},/*#__PURE__*/react_default.a.createElement(ButtonHover,{className:"button--action button--dark",onClick:()=>{window.location.href='docs/guides/getting-started';},target:"_self"},"Learn More"))));}function PackageContainer(){const context=Object(useDocusaurusContext["a" /* default */])();const{siteConfig={}}=context;return/*#__PURE__*/react_default.a.createElement("div",{className:"row package"},/*#__PURE__*/react_default.a.createElement("div",{className:"col col--2 text--right"}),/*#__PURE__*/react_default.a.createElement("div",{className:"package--name col col--4 text--right"},/*#__PURE__*/react_default.a.createElement(Title,null,/*#__PURE__*/react_default.a.createElement("span",{className:"pixelated"},"@"),siteConfig.title.replace('@','').replace('/','/\n'))),/*#__PURE__*/react_default.a.createElement("div",{className:"package--information col col--4 text--left"},/*#__PURE__*/react_default.a.createElement("p",{className:"package--description"},siteConfig.tagline),/*#__PURE__*/react_default.a.createElement("p",{className:"under-development"},"Not yet ready for ",/*#__PURE__*/react_default.a.createElement("span",null,"production"),".")),/*#__PURE__*/react_default.a.createElement("div",{className:"col col--2 text--right"}));}const Hero=()=>{return/*#__PURE__*/react_default.a.createElement(MainHeader,null,/*#__PURE__*/react_default.a.createElement(Container,null,/*#__PURE__*/react_default.a.createElement(Center,null,/*#__PURE__*/react_default.a.createElement("div",{className:"hero--container"},/*#__PURE__*/react_default.a.createElement("div",{className:"container padding-vert--md"},/*#__PURE__*/react_default.a.createElement("div",{className:"row"},/*#__PURE__*/react_default.a.createElement("div",{className:classnames_default()('col col--8 col--offset-2 hero--dark')},/*#__PURE__*/react_default.a.createElement(MainHero,{className:"hero--main",src:'img/hero.svg'}))))),/*#__PURE__*/react_default.a.createElement(Container,null,/*#__PURE__*/react_default.a.createElement(PackageContainer,null)),/*#__PURE__*/react_default.a.createElement(Container,null,/*#__PURE__*/react_default.a.createElement("div",{className:styles_module_default.a.buttons},/*#__PURE__*/react_default.a.createElement(ActionContainer,null))))));};
+`;const PackageName=styled_components_esm.div`
+  font-family: 'Montserrat';
+  color: var(--ifm-color-dark);
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  padding: 1rem 2rem 1rem 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 1em;
+  position: relative;
+`;// @ symbol on scoped packages is rendered separately
+const AtSymbol=styled_components_esm.span`
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  right: 6px;
+  top: 8px;
+`;function ActionContainer(){return/*#__PURE__*/react_default.a.createElement("div",{className:"container action--container"},/*#__PURE__*/react_default.a.createElement("div",{className:"row"},/*#__PURE__*/react_default.a.createElement("div",{className:"col col--3 text--center col--offset-3"},/*#__PURE__*/react_default.a.createElement(ActionButton,{className:"button button--action button--primary",type:"primary",href:'#quick-start',target:"_self"},"QUICK START")),/*#__PURE__*/react_default.a.createElement("div",{className:"col col--3 text--center"},/*#__PURE__*/react_default.a.createElement(ButtonHover,{className:"button--action button--dark",onClick:()=>{window.location.href='docs/guides/getting-started';},target:"_self"},"Learn More"))));}function PackageContainer(){const context=Object(useDocusaurusContext["a" /* default */])();const{siteConfig={}}=context;return/*#__PURE__*/react_default.a.createElement("div",{className:"row package"},/*#__PURE__*/react_default.a.createElement("div",{className:"col col--2 text--right"}),/*#__PURE__*/react_default.a.createElement(PackageName,{style:{backgroundImage:`url(${Object(useBaseUrl["a" /* default */])('/img/hero-gradient.png')})`},className:"package--name col col--4 text--right"},/*#__PURE__*/react_default.a.createElement(Title,null,/*#__PURE__*/react_default.a.createElement(AtSymbol,{style:{backgroundImage:`url(${Object(useBaseUrl["a" /* default */])('/img/hero-gradient.png')})`},className:"pixelated"},"@"),siteConfig.title.replace('@','').replace('/','/\n'))),/*#__PURE__*/react_default.a.createElement("div",{className:"package--information col col--4 text--left"},/*#__PURE__*/react_default.a.createElement("p",{className:"package--description"},siteConfig.tagline),/*#__PURE__*/react_default.a.createElement("p",{className:"under-development"},"Not yet ready for ",/*#__PURE__*/react_default.a.createElement("span",null,"production"),".")),/*#__PURE__*/react_default.a.createElement("div",{className:"col col--2 text--right"}));}const Hero=()=>{return/*#__PURE__*/react_default.a.createElement(MainHeader,null,/*#__PURE__*/react_default.a.createElement(Container,null,/*#__PURE__*/react_default.a.createElement(Center,null,/*#__PURE__*/react_default.a.createElement("div",{className:"hero--container"},/*#__PURE__*/react_default.a.createElement("div",{className:"container padding-vert--md"},/*#__PURE__*/react_default.a.createElement("div",{className:"row"},/*#__PURE__*/react_default.a.createElement("div",{className:classnames_default()('col col--8 col--offset-2 hero--dark')},/*#__PURE__*/react_default.a.createElement(MainHero,{className:"hero--main",src:'img/hero.svg'}))))),/*#__PURE__*/react_default.a.createElement(Container,null,/*#__PURE__*/react_default.a.createElement(PackageContainer,null)),/*#__PURE__*/react_default.a.createElement(Container,null,/*#__PURE__*/react_default.a.createElement("div",{className:styles_module_default.a.buttons},/*#__PURE__*/react_default.a.createElement(ActionContainer,null))))));};
 // CONCATENATED MODULE: ./src/components/Terminal.js
 const Code=styled_components_esm.code`
   color: white !important;
@@ -22825,7 +22848,7 @@ var Marker = __webpack_require__(12);
 var formatPosition = __webpack_require__(45);
 var split = __webpack_require__(76);
 
-var serializeRules = __webpack_require__(9).rules;
+var serializeRules = __webpack_require__(10).rules;
 
 var IgnoreProperty = 'ignore-property';
 
@@ -24009,8 +24032,8 @@ var tidyRules = __webpack_require__(74);
 
 var OptimizationLevel = __webpack_require__(23).OptimizationLevel;
 
-var serializeBody = __webpack_require__(9).body;
-var serializeRules = __webpack_require__(9).rules;
+var serializeBody = __webpack_require__(10).body;
+var serializeRules = __webpack_require__(10).rules;
 
 var Token = __webpack_require__(8);
 
@@ -24067,7 +24090,7 @@ var restoreWithComponents = __webpack_require__(79);
 var restoreFromOptimizing = __webpack_require__(36);
 var wrapSingle = __webpack_require__(32).single;
 
-var serializeBody = __webpack_require__(9).body;
+var serializeBody = __webpack_require__(10).body;
 var Token = __webpack_require__(8);
 
 function mergeIntoShorthands(properties, validator) {
@@ -25794,7 +25817,7 @@ var restoreFromOptimizing = __webpack_require__(36);
 var Token = __webpack_require__(8);
 var Marker = __webpack_require__(12);
 
-var serializeProperty = __webpack_require__(9).property;
+var serializeProperty = __webpack_require__(10).property;
 
 function wouldBreakCompatibility(property, validator) {
   for (var i = 0; i < property.components.length; i++) {
@@ -26377,7 +26400,7 @@ var canReorderSingle = __webpack_require__(49).canReorderSingle;
 var extractProperties = __webpack_require__(80);
 var rulesOverlap = __webpack_require__(99);
 
-var serializeRules = __webpack_require__(9).rules;
+var serializeRules = __webpack_require__(10).rules;
 var OptimizationLevel = __webpack_require__(23).OptimizationLevel;
 var Token = __webpack_require__(8);
 
@@ -26611,8 +26634,8 @@ var tidyRules = __webpack_require__(74);
 
 var OptimizationLevel = __webpack_require__(23).OptimizationLevel;
 
-var serializeBody = __webpack_require__(9).body;
-var serializeRules = __webpack_require__(9).rules;
+var serializeBody = __webpack_require__(10).body;
+var serializeRules = __webpack_require__(10).rules;
 
 var Token = __webpack_require__(8);
 
@@ -26695,7 +26718,7 @@ var extractProperties = __webpack_require__(80);
 
 var optimizeProperties = __webpack_require__(47);
 
-var serializeRules = __webpack_require__(9).rules;
+var serializeRules = __webpack_require__(10).rules;
 
 var Token = __webpack_require__(8);
 
@@ -26782,8 +26805,8 @@ var cloneArray = __webpack_require__(100);
 
 var Token = __webpack_require__(8);
 
-var serializeBody = __webpack_require__(9).body;
-var serializeRules = __webpack_require__(9).rules;
+var serializeBody = __webpack_require__(10).body;
+var serializeRules = __webpack_require__(10).rules;
 
 function reduceNonAdjacent(tokens, context) {
   var options = context.options;
@@ -26962,7 +26985,7 @@ module.exports = reduceNonAdjacent;
 
 var Token = __webpack_require__(8);
 
-var serializeAll = __webpack_require__(9).all;
+var serializeAll = __webpack_require__(10).all;
 
 var FONT_FACE_SCOPE = '@font-face';
 
@@ -26998,8 +27021,8 @@ module.exports = removeDuplicateFontAtRules;
 
 var Token = __webpack_require__(8);
 
-var serializeAll = __webpack_require__(9).all;
-var serializeRules = __webpack_require__(9).rules;
+var serializeAll = __webpack_require__(10).all;
+var serializeRules = __webpack_require__(10).rules;
 
 function removeDuplicateMediaQueries(tokens) {
   var candidates = {};
@@ -27034,8 +27057,8 @@ module.exports = removeDuplicateMediaQueries;
 
 var Token = __webpack_require__(8);
 
-var serializeBody = __webpack_require__(9).body;
-var serializeRules = __webpack_require__(9).rules;
+var serializeBody = __webpack_require__(10).body;
+var serializeRules = __webpack_require__(10).rules;
 
 function removeDuplicates(tokens) {
   var matched = {};
@@ -27345,8 +27368,8 @@ var Token = __webpack_require__(8);
 
 var cloneArray = __webpack_require__(100);
 
-var serializeBody = __webpack_require__(9).body;
-var serializeRules = __webpack_require__(9).rules;
+var serializeBody = __webpack_require__(10).body;
+var serializeRules = __webpack_require__(10).rules;
 
 function naturalSorter(a, b) {
   return a > b ? 1 : -1;
@@ -35122,7 +35145,7 @@ module.exports = require("util");
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const mkdirpSync = __webpack_require__(17).mkdirsSync
 const utimesSync = __webpack_require__(115).utimesMillisSync
@@ -35293,7 +35316,7 @@ module.exports = copySync
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const invalidWin32Path = __webpack_require__(114).invalidWin32Path
 
@@ -35363,7 +35386,7 @@ module.exports = mkdirs
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const invalidWin32Path = __webpack_require__(114).invalidWin32Path
 
@@ -35443,7 +35466,7 @@ module.exports = function (size) {
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const mkdirp = __webpack_require__(17).mkdirs
 const pathExists = __webpack_require__(20).pathExists
@@ -35663,7 +35686,7 @@ module.exports = copy
 
 
 const u = __webpack_require__(14).fromCallback
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const mkdir = __webpack_require__(17)
 const remove = __webpack_require__(52)
@@ -35717,7 +35740,7 @@ module.exports = {
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const assert = __webpack_require__(112)
 
@@ -36070,7 +36093,7 @@ module.exports = {
 
 const u = __webpack_require__(14).fromCallback
 const path = __webpack_require__(6)
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const mkdir = __webpack_require__(17)
 const pathExists = __webpack_require__(20).pathExists
 
@@ -36126,7 +36149,7 @@ module.exports = {
 
 const u = __webpack_require__(14).fromCallback
 const path = __webpack_require__(6)
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const mkdir = __webpack_require__(17)
 const pathExists = __webpack_require__(20).pathExists
 
@@ -36194,7 +36217,7 @@ module.exports = {
 
 const u = __webpack_require__(14).fromCallback
 const path = __webpack_require__(6)
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const _mkdirs = __webpack_require__(17)
 const mkdirs = _mkdirs.mkdirs
 const mkdirsSync = _mkdirs.mkdirsSync
@@ -36263,7 +36286,7 @@ module.exports = {
 
 
 const path = __webpack_require__(6)
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const pathExists = __webpack_require__(20).pathExists
 
 /**
@@ -36368,7 +36391,7 @@ module.exports = {
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 
 function symlinkType (srcpath, type, callback) {
   callback = (typeof type === 'function') ? type : callback
@@ -36428,7 +36451,7 @@ module.exports = jsonFile
 
 var _fs
 try {
-  _fs = __webpack_require__(10)
+  _fs = __webpack_require__(11)
 } catch (_) {
   _fs = __webpack_require__(22)
 }
@@ -36603,7 +36626,7 @@ module.exports = outputJson
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const mkdir = __webpack_require__(17)
 const jsonFile = __webpack_require__(85)
@@ -36640,7 +36663,7 @@ module.exports = {
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const copySync = __webpack_require__(113).copySync
 const removeSync = __webpack_require__(52).removeSync
@@ -36707,7 +36730,7 @@ module.exports = {
 "use strict";
 
 
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const copy = __webpack_require__(116).copy
 const remove = __webpack_require__(52).remove
@@ -36780,7 +36803,7 @@ module.exports = move
 
 
 const u = __webpack_require__(14).fromCallback
-const fs = __webpack_require__(10)
+const fs = __webpack_require__(11)
 const path = __webpack_require__(6)
 const mkdir = __webpack_require__(17)
 const pathExists = __webpack_require__(20).pathExists
