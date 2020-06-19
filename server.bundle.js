@@ -20866,7 +20866,7 @@ module.exports = {
 /* 135 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"title\":\"template-test\",\"tagline\":\"Template project for creating libraries\",\"url\":\"https://qejk.github.io/template-test/\",\"organizationName\":\"Eveble\",\"projectName\":\"template-test\",\"organizationUrl\":\"https://eveble.com\",\"projectUrl\":\"https://github.com/qejk/template-test\",\"license\":\"MIT\",\"apiPathTo\":\"docs/api/classes/calculator\",\"classes\":[\"api/classes/calculator\"],\"interfaces\":[\"api/interfaces/myinterface\"],\"guides\":{\"The-basics\":[\"guides/0-the-basics/getting-started\"]}}");
+module.exports = JSON.parse("{\"title\":\"template-test\",\"tagline\":\"Template project for creating libraries\",\"url\":\"https://qejk.github.io/template-test/\",\"organizationName\":\"Eveble\",\"projectName\":\"template-test\",\"baseUrl\":\"template-test\",\"organizationUrl\":\"https://eveble.com\",\"projectUrl\":\"https://github.com/qejk/template-test\",\"license\":\"MIT\",\"apiPathTo\":\"docs/api/classes/calculator\",\"classes\":[\"api/classes/calculator\"],\"interfaces\":[\"api/interfaces/myinterface\"],\"guides\":{\"The-basics\":[\"guides/0-the-basics/getting-started\"]}}");
 
 /***/ }),
 /* 136 */
