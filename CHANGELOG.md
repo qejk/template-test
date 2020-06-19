@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/qejk/template-test/compare/v1.7.3...v1.7.4) (2020-06-19)
+
+
+### Bug Fixes
+
+* 404 on docs assets ([fa91576](https://github.com/qejk/template-test/commit/fa91576bdc39ce16fa885924e685404cccbb66df))
+
 ## [1.7.3](https://github.com/qejk/template-test/compare/v1.7.2...v1.7.3) (2020-06-19)
 
 
