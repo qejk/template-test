@@ -110,6 +110,8 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         uses: jaid/action-npm-install@v1.2.1
+      - name: Install dependencies on Docusaurus
+        run: cd ./website && yarn install
       - name: Build docs
         run: yarn docs
   docs:
