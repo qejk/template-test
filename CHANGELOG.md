@@ -1,3 +1,21 @@
+# [1.7.0](https://github.com/qejk/template-test/compare/v1.6.0...v1.7.0) (2020-06-19)
+
+
+### Bug Fixes
+
+* add .nojekyll to static files of Docusaurus ([dd9b7e9](https://github.com/qejk/template-test/commit/dd9b7e90837da63d432e5c4ab290269ec42968a9))
+* missing installing dependencies on Docusaurus ([eefbd7b](https://github.com/qejk/template-test/commit/eefbd7ba17a3f5f6cfaa647267ec6ac900654a86))
+* path to project.json ([5c32b06](https://github.com/qejk/template-test/commit/5c32b06cfa7fcee806e930c44b2ec7aaadeb0563))
+
+
+### Features
+
+* add getting started page to docs ([bea7826](https://github.com/qejk/template-test/commit/bea7826db2e031da07fe75e2016c4b5e192ace2d))
+* add new documented label to github labels ([f3c27c2](https://github.com/qejk/template-test/commit/f3c27c28e04843f0faa6eb389f28f8b75aa6b95b))
+* add support for build static Docusaurus on github actions ([351d294](https://github.com/qejk/template-test/commit/351d294cfdfe809a5f294402de3c47efab1e451f))
+* add support for building static docs from Docusaurus ([f5bddb3](https://github.com/qejk/template-test/commit/f5bddb3e48b72d3a97462075888ec87dbd8844e8))
+* add support for defining custom licenses on docs ([11c9608](https://github.com/qejk/template-test/commit/11c9608ae22f60fb83d5d5361ed781b23c1225eb))
+
 # [1.6.0](https://github.com/qejk/template-test/compare/v1.5.1...v1.6.0) (2020-06-19)
 
 
