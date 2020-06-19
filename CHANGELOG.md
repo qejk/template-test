@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/qejk/template-test/compare/v1.5.1...v1.6.0) (2020-06-19)
+
+
+### Bug Fixes
+
+* clearInterval on generating documentation during setup ([b5b54a4](https://github.com/qejk/template-test/commit/b5b54a425385bb4cff114f9df9bebea6615717b3))
+* folder name ([d5c1de2](https://github.com/qejk/template-test/commit/d5c1de29b928e0feb4de889bc6e7cd48f8011009))
+* wrongly closed tag ([f036ec6](https://github.com/qejk/template-test/commit/f036ec687f92d76f62867a0e88cf090e4c75be03))
+
+
+### Features
+
+* add dynamic licensing ([6c094cb](https://github.com/qejk/template-test/commit/6c094cb03ab44fe64e766a382549155f40e219d5))
+
 ## [1.5.1](https://github.com/qejk/template-test/compare/v1.5.0...v1.5.1) (2020-06-18)
 
 
