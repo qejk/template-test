@@ -98,6 +98,7 @@ project.organizationUrl = package.author.url;
 project.projectUrl = package.repository.url
   .replace('.git', '')
   .replace('git', 'https');
+project.license = package.license;
 
 // API classes files
 const classesFiles = fs.readdirSync(paths.classes);
