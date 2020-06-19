@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/qejk/template-test/compare/v1.7.1...v1.7.2) (2020-06-19)
+
+
+### Bug Fixes
+
+* installing Docusaurus deps on actions ([5542ca7](https://github.com/qejk/template-test/commit/5542ca783b6a0bc80ded2d0f5f9707a77c7d8780))
+
 ## [1.7.1](https://github.com/qejk/template-test/compare/v1.7.0...v1.7.1) (2020-06-19)
 
 
