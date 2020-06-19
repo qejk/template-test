@@ -287,7 +287,7 @@ jobs:
         run: |
           cd ./website
           yarn install
-      - run: yarn docs
+      - run: yarn docs:build
       - name: Failed - remove documented label
         uses: actions/github-script@0.6.0
         if: failure() && contains(env.isFork, 'false')
