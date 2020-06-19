@@ -69,18 +69,6 @@ const PackageName = styled.div`
   position: relative;
 `;
 
-// @ symbol on scoped packages is rendered separately
-const AtSymbol = styled.span`
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  position: relative;
-  right: 6px;
-  top: 8px;
-`;
-
 function ActionContainer() {
   return (
     <div className="container action--container">
@@ -123,17 +111,7 @@ function PackageContainer() {
         }}
         className="package--name col col--4 text--right"
       >
-        <Title>
-          <AtSymbol
-            style={{
-              backgroundImage: `url(${useBaseUrl('/img/hero-gradient.png')})`,
-            }}
-            className="pixelated"
-          >
-            @
-          </AtSymbol>
-          {siteConfig.title.replace('@', '').replace('/', '/\n')}
-        </Title>
+        <Title>{siteConfig.title.replace('@', '').replace('/', '/\n')}</Title>
       </PackageName>
       <div className="package--information col col--4 text--left">
         <p className="package--description">{siteConfig.tagline}</p>

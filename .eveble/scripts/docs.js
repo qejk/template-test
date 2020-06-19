@@ -64,11 +64,11 @@ function titleCase(str) {
 }
 
 /**
- * Normalizes directory names on root.
+ * Normalizes categories as directory names.
  * @param {Object} list - List of files with subdirectories.
  * @param {Object} Normalized list.
  */
-function normalizeRootDirs(list) {
+function normalizeCategories(list) {
   const normalized = {};
   for (const [category, filesPaths] of Object.entries(list)) {
     normalized[
@@ -87,13 +87,31 @@ function normalizePathForSidebar(path) {
   return path.replace('./website/docs/', '').replace('.md', '');
 }
 
+// Split by '/' in case package is scoped(i.e. `@_username_/package-name`).
+const potentiallyScopedPackageName = package.name.split('/');
+const isScoped = potentiallyScopedPackageName.length === 2;
+
+const unscopedName =
+  isScoped === true
+    ? potentiallyScopedPackageName[1]
+    : potentiallyScopedPackageName[0];
+
 const project = {};
-project.title = package.name;
+project.name = package.name; // Package name with scope '@_username_/'
+project.isScoped = isScoped;
+project.scope = isScoped === true ? potentiallyScopedPackageName[0] : undefined; // @_username_ or undefined
+project.title = unscopedName; // Package name without scope '@_username_/'
 project.tagline = package.description;
-project.url = package.homepage.replace(`/${package.name}/`, ''); // URL to documentation
+/*
+https://v2.docusaurus.io/docs/deployment
+URL for your GitHub Page's user/organization page.
+This is commonly https://_username_.github.io.
+*/
+project.baseUrl = `/${unscopedName}/`;
+// Ensure that homepage is using trailing '/' i.e. https://_username_.github.io/my-package-name/
+project.url = package.homepage.replace(`/${unscopedName}/`, ''); // URL to documentation
 project.organizationName = package.author.name;
 project.projectName = package.name;
-project.baseUrl = `/${package.name}/`;
 project.organizationUrl = package.author.url;
 project.projectUrl = package.repository.url
   .replace('.git', '')
@@ -115,7 +133,7 @@ project.interfaces = interfacesFiles.map((path) => {
   return normalizePathForSidebar(`${paths.interfaces}/${path}`);
 });
 // Guide files
-project.guides = normalizeRootDirs(listFilesInDir(paths.guides, {}));
+project.guides = normalizeCategories(listFilesInDir(paths.guides, {}));
 
 const stringifiedData = JSON.stringify(project, null, 2);
 fs.writeFileSync('./website/.eveble/project.json', stringifiedData);
