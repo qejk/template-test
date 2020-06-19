@@ -4,7 +4,7 @@ module.exports = {
   title: project.title,
   tagline: project.tagline,
   url: project.url, // URL to documentation
-  baseUrl: '/',
+  baseUrl: project.baseUrl,
   favicon: 'img/favicon.ico',
   organizationName: project.organizationName, // Usually your GitHub org/user name, use object to define author on package.json
   projectName: project.projectName, // Usually your repo name.
