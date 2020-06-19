@@ -1,3 +1,11 @@
+# [1.8.0](https://github.com/qejk/template-test/compare/v1.7.5...v1.8.0) (2020-06-19)
+
+
+### Features
+
+* add script for running docs in browser from root package directory ([a206399](https://github.com/qejk/template-test/commit/a206399c48a0658c834ef89d5506a05baa88a0ce))
+* add support for unscoped packages ([f2b2f60](https://github.com/qejk/template-test/commit/f2b2f60cbb396268f481fdc3d3f33dca1a3f7f6f))
+
 ## [1.7.5](https://github.com/qejk/template-test/compare/v1.7.4...v1.7.5) (2020-06-19)
 
 
