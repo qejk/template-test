@@ -45,6 +45,9 @@
 - name: builds
   description: Code that builds
   color: A1E202
+- name: documented
+  description: Documentation that is auto generated
+  color: eeeeee
 - name: failed
   description: Automated workflow failed
   color: F50C5A
