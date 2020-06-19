@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/qejk/template-test/compare/v1.7.4...v1.7.5) (2020-06-19)
+
+
+### Bug Fixes
+
+* issue with hero-gradient not using useBaseUrl ([8434d4d](https://github.com/qejk/template-test/commit/8434d4d0785e8e0312c95e233a472d2aa96f3c1b))
+
 ## [1.7.4](https://github.com/qejk/template-test/compare/v1.7.3...v1.7.4) (2020-06-19)
 
 
