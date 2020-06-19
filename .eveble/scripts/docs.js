@@ -94,6 +94,7 @@ project.tagline = package.description;
 project.url = package.homepage; // URL to documentation
 project.organizationName = package.author.name;
 project.projectName = package.name;
+project.baseUrl = package.name;
 project.organizationUrl = package.author.url;
 project.projectUrl = package.repository.url
   .replace('.git', '')
