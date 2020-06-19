@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/qejk/template-test/compare/v1.7.2...v1.7.3) (2020-06-19)
+
+
+### Bug Fixes
+
+* baseUrl for Docusaurus ([85d2705](https://github.com/qejk/template-test/commit/85d2705f787579bf0c0bf797114cb1f9665814ec))
+
 ## [1.7.2](https://github.com/qejk/template-test/compare/v1.7.1...v1.7.2) (2020-06-19)
 
 
