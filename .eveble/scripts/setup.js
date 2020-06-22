@@ -271,7 +271,6 @@ function initGitRepository() {
  * @returns {Promise<any>}
  */
 function addToGitRepository() {
-  process.stdout.writes('Adding all files to the new repository');
   return new Promise((resolve, reject) => {
     exec('git add .', (err, stdout) => {
       if (err) {
@@ -288,7 +287,6 @@ function addToGitRepository() {
  * @returns {Promise<any>}
  */
 function commitToGitRepository() {
-  process.stdout.writes('Adding initial Git commit');
   return new Promise((resolve, reject) => {
     exec('git commit -m "Initial commit"', (err, stdout) => {
       if (err) {
@@ -422,7 +420,6 @@ async function askUserAboutProjectDetails() {
  * @param {Object} projectDetails - New project details.
  */
 function updateNpmConfig(projectDetails) {
-  process.stdout.writes('Updating package.json');
   projectDetails.version = '0.0.0-development';
   const newNpmConfig = Object.assign({}, npmConfig, projectDetails);
   const stringifiedData = JSON.stringify(newNpmConfig, null, 2);
@@ -434,7 +431,6 @@ function updateNpmConfig(projectDetails) {
  * Clears files related to project.
  */
 async function clearFiles(isRemovable) {
-  process.stdout.writes('Clearing files');
   fs.writeFileSync('./CHANGELOG.md', '');
   fs.writeFileSync('./LICENSE', '');
   fs.writeFileSync('./AUTHORS', '');
@@ -467,10 +463,9 @@ async function clearFiles(isRemovable) {
  * @returns {Promise<any>}
  */
 function updateDocumentation() {
-  process.stdout.writes('Generating new documentation');
   return new Promise((resolve, reject) => {
     exec(
-      'cd website && npm install && cd .. && npm run docs',
+      'cd website && npm install && cd .. && npm run docs:build',
       (err, stdout) => {
         if (err) {
           reject(new Error(err));
@@ -506,29 +501,45 @@ function updateDocumentation() {
     reportError(reason)
   );
 
+  let projectDetails;
+  if (repoRemoved) {
+    process.stdout.write('\n');
+    projectDetails = await askUserAboutProjectDetails();
+  }
+
   await installPackages(packageManager).catch((reason) => reportError(reason));
 
   if (repoRemoved) {
-    process.stdout.write('\n');
-    const projectDetails = await askUserAboutProjectDetails();
-
-    interval = animateProgress('Initializing new repository');
+    let interval = animateProgress('Initializing new repository');
     process.stdout.write('Initializing new repository');
 
     try {
       await initGitRepository();
       await addToGitRepository();
       await commitToGitRepository();
+      addCheckMark();
+      clearInterval(interval);
+
+      interval = animateProgress('Updating package.json');
       updateNpmConfig(projectDetails);
+      addCheckMark();
+      clearInterval(interval);
+
+      interval = animateProgress('Generating new documentation');
       await updateDocumentation();
+      addCheckMark();
+      clearInterval(interval);
+
+      interval = animateProgress('Clearing files');
       await clearFiles(projectDetails.isRemovable);
       rimraf.sync('./.eveble');
+      addCheckMark();
+      clearInterval(interval);
     } catch (err) {
       reportError(err);
     }
 
     addCheckMark();
-    clearInterval(interval);
   }
 
   endProcess();
