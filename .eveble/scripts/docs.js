@@ -72,9 +72,10 @@ function normalizeCategories(list) {
   const normalized = {};
   for (const [category, filesPaths] of Object.entries(list)) {
     normalized[
-      titleCase(category.replace('-', ' ').replace(/\d+/, '').trim())
+      titleCase(category.replace(/-/g, ' ').replace(/\d+/, '').trim())
     ] = filesPaths;
   }
+
   return normalized;
 }
 
@@ -97,7 +98,7 @@ const unscopedName =
     : potentiallyScopedPackageName[0];
 
 const project = {};
-project.name = package.name; // Package name with scope '@_username_/'
+project.projectName = package.name; // Package name with scope '@_username_/'
 project.isScoped = isScoped;
 project.scope = isScoped === true ? potentiallyScopedPackageName[0] : undefined; // @_username_ or undefined
 project.title = unscopedName; // Package name without scope '@_username_/'
@@ -108,15 +109,19 @@ URL for your GitHub Page's user/organization page.
 This is commonly https://_username_.github.io.
 */
 project.baseUrl = `/${unscopedName}/`;
-// Ensure that homepage is using trailing '/' i.e. https://_username_.github.io/my-package-name/
+// Ensure that homepage is using trailing '/' i.e. https://_username_.github.io/_package-name_/
 project.url = package.homepage.replace(`/${unscopedName}/`, ''); // URL to documentation
-project.organizationName = package.author.name;
-project.projectName = package.name;
-project.organizationUrl = package.author.url;
 project.projectUrl = package.repository.url
   .replace('.git', '')
   .replace('git', 'https');
 project.license = package.license;
+
+if (typeof package.author === 'string') {
+  project.organizationName = package.author;
+} else {
+  project.organizationName = package.author.name;
+  project.organizationUrl = package.author.url;
+}
 
 // API classes files
 const classesFiles = fs.readdirSync(paths.classes);
