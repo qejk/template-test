@@ -376,7 +376,8 @@ async function askUserAboutProjectDetails() {
     {
       type: 'input',
       name: 'homepage',
-      message: "What's the project's homepage",
+      message:
+        "What's the project's homepage(use Github Pages URL: http://<AUTHOR-NAME>.github.io/<PACKAGE-NAME>",
     },
     {
       type: 'input',
