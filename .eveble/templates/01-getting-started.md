@@ -3,9 +3,9 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-[<PACKAGE_NAME>][package-homepage]
+[PACKAGE_NAME][package-homepage]
 
-<PACKAGE_DESCRIPTION>
+PACKAGE_DESCRIPTION
 
 ## Requirements
 
@@ -13,16 +13,16 @@ sidebar_label: Getting Started
 
 ## Installation
 
-To use <PACKAGE_NAME> with your Eveble app:
+To use PACKAGE_NAME with your Eveble app:
 
 ```bash
-npm install <PACKAGE_NAME>
+npm install PACKAGE_NAME
 ```
 
 or
 
 ```bash
-yarn add <PACKAGE_NAME>
+yarn add PACKAGE_NAME
 ```
 
 You'll also need to [install Eveble][eveble-installation].
@@ -55,7 +55,7 @@ The <PACKAGE_NAME> docs are now published at **[PACKAGE_HOMEPAGE][package-homepa
 
 ## License
 
-[<LICENSE_TYPE>](LICENSE.md)
+[LICENSE_TYPE](LICENSE.md)
 
 [package-homepage]: PACKAGE_HOMEPAGE
 [nodejs]: https://nodejs.org/

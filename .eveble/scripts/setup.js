@@ -443,24 +443,26 @@ async function clearFiles(isRemovable) {
     rimraf.sync('./website/docs/guides');
     // README.md
     let readme = fs.readFileSync('./.eveble/templates/README.md', 'utf8');
-    readme = readme.replace(/<PACKAGE_NAME>/g, npmConfig.name);
-    readme = readme.replace(/<PACKAGE_DESCRIPTION>/g, npmConfig.description);
-    readme = readme.replace(/<PACKAGE_HOMEPAGE>/g, npmConfig.homepage);
+    readme = readme.replace(/PACKAGE_NAME/g, npmConfig.name);
+    readme = readme.replace(/PACKAGE_DESCRIPTION/g, npmConfig.description);
+    readme = readme.replace(/PACKAGE_HOMEPAGE/g, npmConfig.homepage);
+    readme = readme.replace(/LICENSE_TYPE/g, npmConfig.license);
     fs.writeFileSync('./README.md', readme);
     // 01-getting-started.md
     let gettingStarted = fs.readFileSync(
       './.eveble/templates/01-getting-started.md',
       'utf8'
     );
-    gettingStarted = gettingStarted.replace(/<PACKAGE_NAME>/g, npmConfig.name);
+    gettingStarted = gettingStarted.replace(/PACKAGE_NAME/g, npmConfig.name);
     gettingStarted = gettingStarted.replace(
-      /<PACKAGE_DESCRIPTION>/g,
+      /PACKAGE_DESCRIPTION/g,
       npmConfig.description
     );
     gettingStarted = gettingStarted.replace(
-      /<PACKAGE_HOMEPAGE>/g,
+      /PACKAGE_HOMEPAGE/g,
       npmConfig.homepage
     );
+    gettingStarted = gettingStarted.replace(/LICENSE_TYPE/g, npmConfig.license);
     fs.mkdirSync('./website/docs/guides');
     fs.mkdirSync('./website/docs/guides/01-the-basics');
     fs.writeFileSync(
