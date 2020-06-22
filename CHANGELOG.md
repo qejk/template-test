@@ -1,3 +1,11 @@
+## [1.9.4](https://github.com/qejk/template-test/compare/v1.9.3...v1.9.4) (2020-06-22)
+
+
+### Bug Fixes
+
+* setup ([611d822](https://github.com/qejk/template-test/commit/611d822886993506e5529cc2f84cf506b58a0056))
+* setup ([700d350](https://github.com/qejk/template-test/commit/700d35081b5f5a8e04a220f23cbd4b7f67e3fa98))
+
 ## [1.9.3](https://github.com/qejk/template-test/compare/v1.9.2...v1.9.3) (2020-06-22)
 
 
