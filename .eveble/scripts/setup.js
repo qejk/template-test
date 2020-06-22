@@ -548,7 +548,7 @@ function updateDocumentation() {
       interval = animateProgress('Clearing files');
       process.stdout.write('Clearing files');
       await clearFiles(projectDetails.isRemovable);
-      rimraf.sync('./.eveble');
+      deleteFileInCurrentDir('setup.js');
       addCheckMark();
       clearInterval(interval);
     } catch (err) {
