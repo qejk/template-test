@@ -452,6 +452,8 @@ async function clearFiles(isRemovable) {
     );
     gettingStarted.replace(/<PACKAGE_NAME>/, npmConfig.name);
     gettingStarted.replace(/<PACKAGE_HOMEPAGE>/, npmConfig.homepage);
+    fs.mkdirSync('./website/docs/guides');
+    fs.mkdirSync('./website/docs/guides/01-the-basics');
     fs.writeFileSync(
       './website/docs/guides/01-the-basics/01-getting-started.md',
       gettingStarted
@@ -503,7 +505,6 @@ function updateDocumentation() {
 
   let projectDetails;
   if (repoRemoved) {
-    process.stdout.write('\n');
     projectDetails = await askUserAboutProjectDetails();
   }
 
@@ -519,17 +520,17 @@ function updateDocumentation() {
       await commitToGitRepository();
       addCheckMark();
       clearInterval(interval);
-
+      process.stdout.write('\n');
       interval = animateProgress('Updating package.json');
       updateNpmConfig(projectDetails);
       addCheckMark();
       clearInterval(interval);
-
+      process.stdout.write('\n');
       interval = animateProgress('Generating new documentation');
       await updateDocumentation();
       addCheckMark();
       clearInterval(interval);
-
+      process.stdout.write('\n');
       interval = animateProgress('Clearing files');
       await clearFiles(projectDetails.isRemovable);
       rimraf.sync('./.eveble');
