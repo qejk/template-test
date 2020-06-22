@@ -22,7 +22,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           locale: 'US'
-  commitlint:
+  lint_commits:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -154,7 +154,7 @@ jobs:
             github.issues.addLabels({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
               labels: ['linted']
             })
-  test_format:
+  format:
     name: Format and push code back
     runs-on: ubuntu-latest
     env:
