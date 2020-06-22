@@ -70,6 +70,8 @@ const PackageName = styled.div`
 `;
 
 function ActionContainer() {
+  const context = useDocusaurusContext();
+  const { siteConfig = {} } = context;
   return (
     <div className="container action--container">
       <div className="row">
@@ -87,7 +89,7 @@ function ActionContainer() {
           <ButtonHover
             className="button--action button--dark"
             onClick={() => {
-              window.location.href = 'docs/guides/getting-started';
+              window.location.href = siteConfig.themeConfig.navbar.links[0].to;
             }}
             target="_self"
           >

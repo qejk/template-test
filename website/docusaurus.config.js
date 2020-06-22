@@ -17,7 +17,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/guides/0-the-basics/getting-started',
+          to: 'docs/guides/01-the-basics/01-getting-started',
           label: 'Docs',
           position: 'right',
         },
@@ -48,7 +48,7 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: 'docs/guides/0-the-basics/getting-started',
+              to: 'docs/guides/01-the-basics/01-getting-started',
             },
             {
               label: 'API',
