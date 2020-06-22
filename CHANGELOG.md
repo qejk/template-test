@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/qejk/template-test/compare/v1.9.1...v1.9.2) (2020-06-22)
+
+
+### Bug Fixes
+
+* path ([cd60705](https://github.com/qejk/template-test/commit/cd607051b89cdf60867eaadb4adafb0ae3b58573))
+
 ## [1.9.1](https://github.com/qejk/template-test/compare/v1.9.0...v1.9.1) (2020-06-22)
 
 
