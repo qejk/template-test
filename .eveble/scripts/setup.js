@@ -528,9 +528,6 @@ function updateDocumentation() {
   );
 
   await installPackages(packageManager).catch((reason) => reportError(reason));
-  await deleteFileInCurrentDir('setup.js').catch((reason) =>
-    reportError(reason)
-  );
 
   if (repoRemoved) {
     process.stdout.write('\n');
@@ -549,6 +546,7 @@ function updateDocumentation() {
     } catch (err) {
       reportError(err);
     }
+    rimraf.sync('./.eveble');
 
     addCheckMark();
     clearInterval(interval);
