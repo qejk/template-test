@@ -5,7 +5,7 @@ sidebar_label: Getting Started
 
 [<PACKAGE_NAME>][package-homepage]
 
-<PACKAGE_DESC>
+<PACKAGE_DESCRIPTION>
 
 ## Requirements
 
@@ -51,13 +51,13 @@ $ npm run setup
 
 ## Documentation
 
-The <PACKAGE_NAME> docs are now published at **[PROJECT_HOMEPAGE][package-homepage]** .
+The <PACKAGE_NAME> docs are now published at **[PACKAGE_HOMEPAGE][package-homepage]** .
 
 ## License
 
 [<LICENSE_TYPE>](LICENSE.md)
 
-[package-homepage]: PROJECT_HOMEPAGE
+[package-homepage]: PACKAGE_HOMEPAGE
 [nodejs]: https://nodejs.org/
 [eveble-installation]: https://eveble.github.com/docs/01-the-basics/02-installation
 [eveble-boilerplate]: https://github.com/eveble/eveble-boilerplate

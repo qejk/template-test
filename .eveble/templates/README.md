@@ -2,7 +2,7 @@
 
 =========================
 
-<PACKAGE_DESC>
+<PACKAGE_DESCRIPTION>
 
 ## Requirements
 
@@ -10,7 +10,7 @@
 
 ## Installation
 
-To use <PROJECT_NAME> with your Eveble app:
+To use <PACKAGE_NAME> with your Eveble app:
 
 ```bash
 npm install <PACKAGE_NAME>
@@ -48,13 +48,13 @@ $ npm run setup
 
 ## Documentation
 
-The <PROJECT_NAME> docs are now published at **[PROJECT_HOMEPAGE][package-homepage]** .
+The <PACKAGE_NAME> docs are now published at **[PACKAGE_HOMEPAGE][package-homepage]** .
 
 ## License
 
 [<LICENSE_TYPE>](LICENSE.md)
 
-[package-homepage]: PROJECT_HOMEPAGE
+[package-homepage]: PACKAGE_HOMEPAGE
 [nodejs]: https://nodejs.org/
 [eveble-installation]: https://eveble.github.com/docs/01-the-basics/02-installation
 [eveble-boilerplate]: https://github.com/eveble/eveble-boilerplate

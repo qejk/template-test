@@ -444,6 +444,7 @@ async function clearFiles(isRemovable) {
     // README.md
     let readme = fs.readFileSync('./.eveble/templates/README.md', 'utf8');
     readme = readme.replace(/<PACKAGE_NAME>/g, npmConfig.name);
+    readme = readme.replace(/<PACKAGE_DESCRIPTION>/g, npmConfig.description);
     readme = readme.replace(/<PACKAGE_HOMEPAGE>/g, npmConfig.homepage);
     fs.writeFileSync('./README.md', readme);
     // 01-getting-started.md
@@ -452,6 +453,10 @@ async function clearFiles(isRemovable) {
       'utf8'
     );
     gettingStarted = gettingStarted.replace(/<PACKAGE_NAME>/g, npmConfig.name);
+    gettingStarted = gettingStarted.replace(
+      /<PACKAGE_DESCRIPTION>/g,
+      npmConfig.description
+    );
     gettingStarted = gettingStarted.replace(
       /<PACKAGE_HOMEPAGE>/g,
       npmConfig.homepage
@@ -547,8 +552,6 @@ function updateDocumentation() {
     } catch (err) {
       reportError(err);
     }
-
-    addCheckMark();
   }
 
   endProcess();
