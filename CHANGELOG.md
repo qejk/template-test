@@ -1,3 +1,11 @@
+## [1.9.1](https://github.com/qejk/template-test/compare/v1.9.0...v1.9.1) (2020-06-22)
+
+
+### Bug Fixes
+
+* missing rimraf dependency ([c9d326e](https://github.com/qejk/template-test/commit/c9d326eeddad9c4f2e70e3b4799efb6e44d63fef))
+* order of removing internal scripts ([822b1cf](https://github.com/qejk/template-test/commit/822b1cf8c9a7f143c17fb5405433fa247e7b87e1))
+
 # [1.9.0](https://github.com/qejk/template-test/compare/v1.8.0...v1.9.0) (2020-06-22)
 
 
