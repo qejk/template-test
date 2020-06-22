@@ -1,3 +1,10 @@
+## [1.9.8](https://github.com/qejk/template-test/compare/v1.9.7...v1.9.8) (2020-06-22)
+
+
+### Bug Fixes
+
+* templates ([48fec86](https://github.com/qejk/template-test/commit/48fec86363fcefa19edef80a83323b0839311d97))
+
 ## [1.9.7](https://github.com/qejk/template-test/compare/v1.9.6...v1.9.7) (2020-06-22)
 
 
