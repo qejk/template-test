@@ -511,8 +511,10 @@ function updateDocumentation() {
   await installPackages(packageManager).catch((reason) => reportError(reason));
 
   if (repoRemoved) {
+    process.stdout.write('\n');
     let interval = animateProgress('Initializing new repository');
     process.stdout.write('Initializing new repository');
+    process.stdout.write('\n');
 
     try {
       await initGitRepository();
