@@ -1,3 +1,13 @@
+# [1.9.0](https://github.com/qejk/template-test/compare/v1.8.0...v1.9.0) (2020-06-22)
+
+
+### Features
+
+* add getting started template ([c773825](https://github.com/qejk/template-test/commit/c7738253a47b938454a389d2e647543f06bcec38))
+* add README template ([28dc634](https://github.com/qejk/template-test/commit/28dc634ca15177926a7d0c55bcf94dd3581f2649))
+* add support for clearing up src/guides ([2fe9e56](https://github.com/qejk/template-test/commit/2fe9e567954845545d94e2ee67f797772f4a1a1b))
+* add support for string author ([fa8b62f](https://github.com/qejk/template-test/commit/fa8b62fa37d87343bbcb612f2fd4f48e13092ec0))
+
 # [1.8.0](https://github.com/qejk/template-test/compare/v1.7.5...v1.8.0) (2020-06-19)
 
 
