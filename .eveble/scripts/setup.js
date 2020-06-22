@@ -22,6 +22,7 @@ const readline = require('readline');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
+const rimraf = require('rimraf');
 
 const animateProgress = require('./helpers/progress');
 const addCheckMark = require('./helpers/checkmark');
@@ -105,6 +106,7 @@ function removeGitRepository() {
 }
 
 /**
+ * @async
  * Ask user about starting new repository.
  * @returns {Promise<boolean>}
  */
@@ -121,6 +123,7 @@ async function askUserIfWeShouldRemoveRepo() {
 }
 
 /**
+ * @async
  * Checks if we are under Git version control.
  * If we are and this a clone of our repository the user is given a choice to
  * either keep it or start with a new repository.
@@ -322,6 +325,7 @@ function endProcess() {
 }
 
 /**
+ * @async
  * Ask user about used package manager.
  * @returns {Promise<'npm'|'yarn'|'pnpm">}
  */
@@ -341,6 +345,7 @@ async function askUserAboutUsedPackageManager() {
 }
 
 /**
+ * @async
  * Ask user about project details.
  * @returns {Promise<Object>}
  */
@@ -415,9 +420,69 @@ function updateNpmConfig(projectDetails) {
   const newNpmConfig = Object.assign({}, npmConfig, projectDetails);
   const stringifiedData = JSON.stringify(newNpmConfig, null, 2);
   fs.writeFileSync('./package.json', stringifiedData);
+}
+
+/**
+ * @async
+ * Clears files related to project.
+ */
+async function clearFiles() {
   fs.writeFileSync('./CHANGELOG.md', '');
   fs.writeFileSync('./LICENSE', '');
   fs.writeFileSync('./AUTHORS', '');
+
+  const isRemovable = await askUserAboutClearingProject();
+  if (isRemovable) {
+    fs.unlinkSync('./src/index.ts');
+    fs.unlinkSync('./src/calculator.ts');
+    fs.writeFileSync('./src/index.ts', '');
+    rimraf.sync('./website/docs/guides');
+    // README.md
+    const readme = fs.readFileSync('./.eveble/templates/README.md', 'utf8');
+    readme.replace(/<PACKAGE_NAME>/, npmConfig.name);
+    readme.replace(/<PACKAGE_HOMEPAGE>/, npmConfig.homepage);
+    fs.writeFileSync('./README.md', readme);
+    // 01-getting-started.md
+    const gettingStarted = fs.readFileSync(
+      './.eveble/templates/01-getting-started.md',
+      'utf8'
+    );
+    gettingStarted.replace(/<PACKAGE_NAME>/, npmConfig.name);
+    gettingStarted.replace(/<PACKAGE_HOMEPAGE>/, npmConfig.homepage);
+    fs.writeFileSync(
+      './website/docs/guides/01-the-basics/01-getting-started.md',
+      gettingStarted
+    );
+  }
+}
+
+/**
+ * @async
+ * Ask user about cleaning up ./src and ./website/docs/guides. Use here list
+ * type input so there is no accidental
+ * @returns {Promise<boolean>}
+ */
+async function askUserAboutClearingProject() {
+  const questions = [
+    {
+      type: 'list',
+      name: 'isRemovable',
+      message: 'Do you want to remove existing code and documentation',
+      choices: ['no', 'yes'],
+      filter: function (val) {
+        return val === 'no' ? false : true;
+      },
+    },
+    {
+      type: 'confirm',
+      name: 'isConfirmed',
+      message:
+        'Are you sure about removing existing code under ./src and & ./website/docs/guides',
+      default: 'n',
+    },
+  ];
+  const answer = await inquirer.prompt(questions);
+  return answer.isRemovable && answer.isConfirmed;
 }
 
 /**
@@ -439,6 +504,7 @@ function updateDocumentation() {
 }
 
 /**
+ * @async
  * Run
  */
 (async () => {
@@ -466,10 +532,6 @@ function updateDocumentation() {
     reportError(reason)
   );
 
-  const projectDetails = await askUserAboutProjectDetails();
-  updateNpmConfig(projectDetails);
-  await updateDocumentation();
-
   if (repoRemoved) {
     process.stdout.write('\n');
     interval = animateProgress('Initializing new repository');
@@ -479,6 +541,11 @@ function updateDocumentation() {
       await initGitRepository();
       await addToGitRepository();
       await commitToGitRepository();
+
+      const projectDetails = await askUserAboutProjectDetails();
+      updateNpmConfig(projectDetails);
+      await clearFiles();
+      await updateDocumentation();
     } catch (err) {
       reportError(err);
     }
