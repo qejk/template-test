@@ -81,9 +81,7 @@ function checkIfRepositoryIsAClone() {
         .split(/\r?\n/)
         .map((line) => line.trim())
         .filter((line) => line.startsWith('origin'))
-        .filter((line) =>
-          /react-boilerplate\/react-boilerplate\.git/.test(line)
-        ).length;
+        .filter((line) => /qejk\/template-test\.git/.test(line)).length;
 
       resolve(!!isClonedRepo);
     });
@@ -142,7 +140,6 @@ async function cleanCurrentRepository() {
   const isClone = await checkIfRepositoryIsAClone().catch((reason) =>
     reportError(reason)
   );
-
   // Not our clone so do nothing
   if (isClone === false) {
     return false;
