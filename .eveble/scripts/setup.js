@@ -377,7 +377,7 @@ async function askUserAboutProjectDetails() {
       type: 'input',
       name: 'homepage',
       message:
-        "What's the project's homepage(use Github Pages URL: http://<AUTHOR-NAME>.github.io/<PACKAGE-NAME>",
+        "What's the project's homepage(use Github Pages URL: http://<AUTHOR-NAME>.github.io/<PACKAGE-NAME>/",
     },
     {
       type: 'input',
@@ -442,17 +442,20 @@ async function clearFiles(isRemovable) {
     fs.writeFileSync('./src/index.ts', '');
     rimraf.sync('./website/docs/guides');
     // README.md
-    const readme = fs.readFileSync('./.eveble/templates/README.md', 'utf8');
-    readme.replace(/<PACKAGE_NAME>/, npmConfig.name);
-    readme.replace(/<PACKAGE_HOMEPAGE>/, npmConfig.homepage);
+    let readme = fs.readFileSync('./.eveble/templates/README.md', 'utf8');
+    readme = readme.replace(/<PACKAGE_NAME>/g, npmConfig.name);
+    readme = readme.replace(/<PACKAGE_HOMEPAGE>/g, npmConfig.homepage);
     fs.writeFileSync('./README.md', readme);
     // 01-getting-started.md
-    const gettingStarted = fs.readFileSync(
+    let gettingStarted = fs.readFileSync(
       './.eveble/templates/01-getting-started.md',
       'utf8'
     );
-    gettingStarted.replace(/<PACKAGE_NAME>/, npmConfig.name);
-    gettingStarted.replace(/<PACKAGE_HOMEPAGE>/, npmConfig.homepage);
+    gettingStarted = gettingStarted.replace(/<PACKAGE_NAME>/g, npmConfig.name);
+    gettingStarted = gettingStarted.replace(
+      /<PACKAGE_HOMEPAGE>/g,
+      npmConfig.homepage
+    );
     fs.mkdirSync('./website/docs/guides');
     fs.mkdirSync('./website/docs/guides/01-the-basics');
     fs.writeFileSync(
@@ -515,7 +518,6 @@ function updateDocumentation() {
     process.stdout.write('\n');
     let interval = animateProgress('Initializing new repository');
     process.stdout.write('Initializing new repository');
-    process.stdout.write('\n');
 
     try {
       await initGitRepository();
@@ -525,16 +527,19 @@ function updateDocumentation() {
       clearInterval(interval);
       process.stdout.write('\n');
       interval = animateProgress('Updating package.json');
+      process.stdout.write('Updating package.json');
       updateNpmConfig(projectDetails);
       addCheckMark();
       clearInterval(interval);
       process.stdout.write('\n');
       interval = animateProgress('Generating new documentation');
+      process.stdout.write('Generating new documentation');
       await updateDocumentation();
       addCheckMark();
       clearInterval(interval);
       process.stdout.write('\n');
       interval = animateProgress('Clearing files');
+      process.stdout.write('Clearing files');
       await clearFiles(projectDetails.isRemovable);
       rimraf.sync('./.eveble');
       addCheckMark();
