@@ -55,7 +55,7 @@ The <PACKAGE_NAME> docs are now published at **[PACKAGE_HOMEPAGE][package-homepa
 
 ## License
 
-[LICENSE_TYPE](LICENSE.md)
+[LICENSE_TYPE](LICENSE)
 
 [package-homepage]: PACKAGE_HOMEPAGE
 [nodejs]: https://nodejs.org/
