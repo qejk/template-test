@@ -1,16 +1,50 @@
 export class Calculator {
   /**
-   * Evaluates if number is zero
-   * @param arg - Number.
-   * @returns Boolean.
-   * @example
-   *```ts
-   * new Calculator().isZero(0) // true
-   * new Calculator().isZero(1) // false
-   * new Calculator().isZero(333) // false
-   *```
+   * Adds a number to number.
+   * @param a - First number.
+   * @param b - Second number.
+   * @returns Number.
    */
-  isZero(arg: number): boolean {
-    return arg === 0;
+  public add(a: number, b: number): number {
+    return a + b;
+  }
+
+  /**
+   * Subtracts a numbers from number.
+   * @param a - First number.
+   * @param b - Second number.
+   * @returns Number.
+   */
+  public subtract(a: number, b: number): number {
+    return a - b;
+  }
+
+  /**
+   * Multiplies a numbers by number.
+   * @param a - First number.
+   * @param b - Second number.
+   * @returns Number.
+   */
+  public multiply(a: number, b: number): number {
+    return a * b;
+  }
+
+  /**
+   * Divide a numbers by number.
+   * @param a - First number.
+   * @param b - Second number.
+   * @returns Number.
+   */
+  public divide(a: number, b: number): number {
+    return a / b;
+  }
+
+  /**
+   * Increment number by +1.
+   * @param a - Number.
+   * @returns Number.
+   */
+  public increment(a: number): number {
+    return a + 1;
   }
 }
