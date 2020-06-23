@@ -439,7 +439,6 @@ async function clearFiles(isRemovable) {
   if (isRemovable) {
     fs.unlinkSync('./src/index.ts');
     fs.unlinkSync('./src/calculator.ts');
-    fs.writeFileSync('./src/index.ts', '');
     rimraf.sync('./website/docs/guides');
     // README.md
     let readme = fs.readFileSync('./.eveble/templates/README.md', 'utf8');
