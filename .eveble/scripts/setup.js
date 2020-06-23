@@ -565,13 +565,6 @@ function removeDocumentation() {
       clearInterval(interval);
 
       process.stdout.write('\n');
-      interval = animateProgress('Removing last build');
-      process.stdout.write('Removing last build');
-      await removeBuild();
-      addCheckMark();
-      clearInterval(interval);
-
-      process.stdout.write('\n');
       interval = animateProgress('Removing documentation');
       process.stdout.write('Removing documentation');
       await removeDocumentation();
