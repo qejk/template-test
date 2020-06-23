@@ -403,6 +403,18 @@ async function askUserAboutProjectDetails() {
       message: 'Do you want this repository to be private',
       default: 'y',
     },
+    {
+      type: 'confirm',
+      name: 'isEvebleRequired',
+      message: 'Do you want to install Eveble framework',
+      default: 'y',
+    },
+    {
+      type: 'confirm',
+      name: 'isTestingRequired',
+      message: 'Do you want to install testing framework for Eveble',
+      default: 'y',
+    },
   ];
   const answer = await inquirer.prompt(questions);
   answer.author = {
@@ -424,6 +436,20 @@ function updateNpmConfig(projectDetails) {
   projectDetails.version = '0.0.0-development';
   const newNpmConfig = Object.assign({}, npmConfig, projectDetails);
   const stringifiedData = JSON.stringify(newNpmConfig, null, 2);
+  // Remove setup dependencies
+  delete newNpmConfig.devDependencies['inquirer'];
+  delete newNpmConfig.devDependencies['rimraf'];
+  delete newNpmConfig.devDependencies['shelljs'];
+  // Remove setup scripts
+  delete newNpmConfig.scripts['setup'];
+  delete newNpmConfig['scripts-info']['setup'];
+
+  if (projectDetails.isEvebleRequired) {
+    newNpmConfig.dependencies['@eveble/eveble'] = '^0.2.0';
+  }
+  if (projectDetails.isTestingRequired) {
+    newNpmConfig.dependencies['@eveble/testing'] = '^0.2.0';
+  }
   fs.writeFileSync('./package.json', stringifiedData);
 }
 
