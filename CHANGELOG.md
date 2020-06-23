@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/qejk/template-test/compare/v1.9.11...v1.10.0) (2020-06-23)
+
+
+### Bug Fixes
+
+* removal of only files in api/classes and api/interfaces ([44f0ed3](https://github.com/qejk/template-test/commit/44f0ed3277251aacc7cd7a99b13549c57d119cec))
+
+
+### Features
+
+* add support for clearing up build & docs ([ee2edee](https://github.com/qejk/template-test/commit/ee2edee296d3858884a177427f4eba37da77e81b))
+
 ## [1.9.11](https://github.com/qejk/template-test/compare/v1.9.10...v1.9.11) (2020-06-23)
 
 
