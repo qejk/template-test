@@ -506,6 +506,13 @@ function removeDocumentation() {
     });
   });
 }
+/**
+ * Removes tests.
+ * @returns void
+ */
+function removeTests() {
+  rimraf.sync('./test/unit/*');
+}
 
 /**
  * @async
@@ -554,6 +561,13 @@ function removeDocumentation() {
       interval = animateProgress('Updating package.json');
       process.stdout.write('Updating package.json');
       updateNpmConfig(projectDetails);
+      addCheckMark();
+      clearInterval(interval);
+
+      process.stdout.write('\n');
+      interval = animateProgress('Removing tests');
+      process.stdout.write('Removing tests');
+      removeTests();
       addCheckMark();
       clearInterval(interval);
 
