@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/qejk/template-test/compare/v1.11.0...v1.12.0) (2020-06-23)
+
+
+### Features
+
+* add support for adding eveble ([8261d13](https://github.com/qejk/template-test/commit/8261d1309bbd1033054bfef68db27e56f6fdbecd))
+
 # [1.11.0](https://github.com/qejk/template-test/compare/v1.10.0...v1.11.0) (2020-06-23)
 
 
