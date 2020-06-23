@@ -1,3 +1,12 @@
+## [1.9.11](https://github.com/qejk/template-test/compare/v1.9.10...v1.9.11) (2020-06-23)
+
+
+### Bug Fixes
+
+* issue with template ([3370593](https://github.com/qejk/template-test/commit/33705935e26666ae47c8780cfcdda2e0056bd149))
+* pin rimraf to the one from node_modules ([b520031](https://github.com/qejk/template-test/commit/b520031d94202416ab589a37cdbbc47de8081173))
+* setup order ([b74a6d7](https://github.com/qejk/template-test/commit/b74a6d75d4a52e86427510dccd841914e6fc2228))
+
 ## [1.9.10](https://github.com/qejk/template-test/compare/v1.9.9...v1.9.10) (2020-06-22)
 
 
