@@ -1,3 +1,16 @@
+# [1.11.0](https://github.com/qejk/template-test/compare/v1.10.0...v1.11.0) (2020-06-23)
+
+
+### Bug Fixes
+
+* remove adding empty index.ts ([e239a56](https://github.com/qejk/template-test/commit/e239a56fb8309e16b3fb39c582fe01e667b9d001))
+* remove dupe ([4c64b54](https://github.com/qejk/template-test/commit/4c64b54a9aedaa57cd018f8c17de2679352f6a69))
+
+
+### Features
+
+* add removing tests ([0b122de](https://github.com/qejk/template-test/commit/0b122de6e353c2c99c59459b1a26f504c23ea5a4))
+
 # [1.10.0](https://github.com/qejk/template-test/compare/v1.9.11...v1.10.0) (2020-06-23)
 
 
