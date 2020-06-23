@@ -435,7 +435,6 @@ async function askUserAboutProjectDetails() {
 function updateNpmConfig(projectDetails) {
   projectDetails.version = '0.0.0-development';
   const newNpmConfig = Object.assign({}, npmConfig, projectDetails);
-  const stringifiedData = JSON.stringify(newNpmConfig, null, 2);
   // Remove setup dependencies
   delete newNpmConfig.devDependencies['inquirer'];
   delete newNpmConfig.devDependencies['rimraf'];
@@ -444,12 +443,13 @@ function updateNpmConfig(projectDetails) {
   delete newNpmConfig.scripts['setup'];
   delete newNpmConfig['scripts-info']['setup'];
 
-  if (projectDetails.isEvebleRequired) {
+  if (projectDetails.isEvebleRequired === true) {
     newNpmConfig.dependencies['@eveble/eveble'] = '^0.2.0';
   }
-  if (projectDetails.isTestingRequired) {
-    newNpmConfig.dependencies['@eveble/testing'] = '^0.2.0';
+  if (projectDetails.isTestingRequired === true) {
+    newNpmConfig.devDependencies['@eveble/testing'] = '^0.2.0';
   }
+  const stringifiedData = JSON.stringify(newNpmConfig, null, 2);
   fs.writeFileSync('./package.json', stringifiedData);
 }
 
