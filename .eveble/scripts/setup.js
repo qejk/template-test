@@ -475,7 +475,7 @@ async function clearFiles(isRemovable) {
 }
 
 /**
- * Remove last build.
+ * Removes last build.
  * @returns {Promise<any>}
  */
 function removeBuild() {
@@ -491,7 +491,7 @@ function removeBuild() {
 }
 
 /**
- * Remove documentation.
+ * Removes documentation.
  * @returns {Promise<any>}
  */
 function removeDocumentation() {
