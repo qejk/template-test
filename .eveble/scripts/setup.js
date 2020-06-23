@@ -392,16 +392,16 @@ async function askUserAboutProjectDetails() {
     },
     {
       type: 'confirm',
-      name: 'private',
-      message: 'Do you want this repository to be private',
-      default: 'y',
-    },
-    {
-      type: 'confirm',
       name: 'isRemovable',
       message:
         'Do you want to remove existing code and documentation under ./src and & ./website/docs/guides',
       default: 'n',
+    },
+    {
+      type: 'confirm',
+      name: 'private',
+      message: 'Do you want this repository to be private',
+      default: 'y',
     },
   ];
   const answer = await inquirer.prompt(questions);
@@ -469,6 +469,8 @@ async function clearFiles(isRemovable) {
       './website/docs/guides/01-the-basics/01-getting-started.md',
       gettingStarted
     );
+    rimraf.sync('./.eveble/scripts/helpers');
+    rimraf.sync('./.eveble/templates');
   }
 }
 /**
