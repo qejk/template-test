@@ -49,14 +49,6 @@ $ cd <YOUR_PROJECT_NAME>
 $ npm run setup
 ```
 
-## Documentation
-
-The <PACKAGE_NAME> docs are now published at **[PACKAGE_HOMEPAGE][package-homepage]** .
-
-## License
-
-[LICENSE_TYPE](LICENSE)
-
 [package-homepage]: PACKAGE_HOMEPAGE
 [nodejs]: https://nodejs.org/
 [eveble-installation]: https://eveble.github.com/docs/01-the-basics/02-installation
